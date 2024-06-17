@@ -8,6 +8,9 @@ class HomeController < StoreController
     @searcher = build_searcher(params.merge(include_images: true))
     @products = @searcher.retrieve_products
 
+    sportswear_taxonomy = Spree::Taxonomy.find_by(name: 'Sportswear')
+    @sportswear_taxonomy_path = spree.nested_taxons_path(sportswear_taxonomy) if sportswear_taxonomy
+
     # Split products into groups of 3 for the homepage blocks.
     # You probably want to remove this logic and use your own!
     homepage_groups = @products.in_groups_of(3, false)

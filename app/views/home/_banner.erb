@@ -8,16 +8,20 @@
     <div class="row justify-content-center"> <!-- Centrer les cartes horizontalement -->
       <div class="col-md-6 col-lg-4"> <!-- Ajuster les colonnes pour différentes tailles d'écran -->
         <div class="card">
-          <div class="card-body" sportswear_taxonomy.root_path>
-            <h5 class="card-title">Sportswear<br><strong>7'Mates</strong></h5>
+          <div class="card-body">
+            <%= link_to '/t/univers/sportswear' do %>
+              <h5 class="card-title">Sportswear<br><strong>7'Mates</strong></h5>
+            <% end %>
             <p class="card-text">Découvrez notre gamme SPORT.</p>
           </div>
         </div>
       </div>
       <div class="col-md-6 col-lg-4"> <!-- Ajuster les colonnes pour différentes tailles d'écran -->
         <div class="card">
-          <div class="card-body" href="/t/univers/luxe">
-            <h5 class="card-title">Luxe<br><strong>SevenMates</strong></h5>
+          <div class="card-body">
+            <%= link_to '/t/univers/luxe' do %>
+              <h5 class="card-title">Luxe<br><strong>SevenMates</strong></h5>
+            <% end %>
             <p class="card-text">Explorez notre gamme LUXE pour des occasions spéciales.</p>
           </div>
         </div>
