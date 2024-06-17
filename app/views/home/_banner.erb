@@ -1,0 +1,27 @@
+<div class="banner">
+  <div class="container">
+    <div class="text-center mb-5 bannerimg">
+      <%= link_to products_path do %>
+        <%= image_tag 'banner.svg', class: 'img-fluid' %>
+      <% end %>
+    </div>
+    <div class="row justify-content-center"> <!-- Centrer les cartes horizontalement -->
+      <div class="col-md-6 col-lg-4"> <!-- Ajuster les colonnes pour différentes tailles d'écran -->
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Sportswear<br><strong>7'Mates</strong></h5>
+            <p class="card-text">Découvrez notre gamme SPORT.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4"> <!-- Ajuster les colonnes pour différentes tailles d'écran -->
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Luxe<br><strong>SevenMates</strong></h5>
+            <p class="card-text">Explorez notre gamme LUXE pour des occasions spéciales.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
