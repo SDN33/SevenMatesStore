@@ -5,26 +5,22 @@
         <%= image_tag 'banner.svg', class: 'img-fluid' %>
       <% end %>
     </div>
-    <div class="row justify-content-center"> <!-- Centrer les cartes horizontalement -->
-      <div class="col-md-6 col-lg-4"> <!-- Ajuster les colonnes pour différentes tailles d'écran -->
-        <div class="card">
-          <div class="card-body">
-            <%= link_to '/t/univers/sportswear' do %>
-              <h5 class="card-title">Sportswear<br><strong>7'Mates</strong></h5>
-            <% end %>
+    <div class="card-container"> <!-- Container for flexbox -->
+      <div class="card text-white">
+        <%= link_to '/t/univers/sportswear' do %>
+          <%= image_tag 'sportswearbg.png', alt: 'sportswear background', class: 'card-img img-fluid' %>
+          <div class="card-img-overlay">
             <p class="card-text">Découvrez notre gamme SPORT.</p>
           </div>
-        </div>
+        <% end %>
       </div>
-      <div class="col-md-6 col-lg-4"> <!-- Ajuster les colonnes pour différentes tailles d'écran -->
-        <div class="card">
-          <div class="card-body">
-            <%= link_to '/t/univers/luxe' do %>
-              <h5 class="card-title">Luxe<br><strong>SevenMates</strong></h5>
-            <% end %>
+      <div class="card text-white">
+        <%= link_to '/t/univers/luxe' do %>
+          <%= image_tag 'luxebg.png', alt: 'luxe background', class: 'card-img img-fluid' %> <!-- Assuming you have an image for Luxe -->
+          <div class="card-img-overlay">
             <p class="card-text">Explorez notre gamme LUXE pour des occasions spéciales.</p>
           </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
