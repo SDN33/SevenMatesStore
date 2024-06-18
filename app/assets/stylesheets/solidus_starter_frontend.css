@@ -11,7 +11,7 @@
 }
 
 .img-fluid {
-  max-width: 100%; /* Make the image responsive */
+  max-width: 120%; /* Make the image responsive */
   height: auto; /* Maintain the image ratio */
   margin-bottom: 30px; /* Space below the image */
 }
