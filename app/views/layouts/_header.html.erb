@@ -14,7 +14,7 @@
     <div class="flex items-center gap-x-4 xl:gap-x-8 w-full justify-center lg:justify-start">
       <%= link_to root_path, class: 'absolute lg:relative left-1/2 lg:left-0 lg:-translate-x-0 -translate-x-1/2 flex items-center space-x-3' do %>
         <%= image_tag "logopetit.png", class: "w-12" %>
-        <span class="uppercase font-sans font-semibold mb-0 dark:text-sand text-body lg:text-body-sm xl:text-body-sm"><%= Spree::Store.default.name %></span>
+        <span class="camelcase font-sans font-semibold mb-0 dark:text-sand text-body lg:text-body-sm xl:text-body-sm"><strong><%= Spree::Store.default.name %></strong></span>
       <% end %>
 
       <% categories = taxonomies.first %>
