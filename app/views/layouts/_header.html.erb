@@ -57,14 +57,7 @@
 
         <div class="lg:hidden mt-auto">
           <div class="flex justify-between">
-            <%= render "shared/navigation/theme_switcher" %>
-
-            <%= link_to "https://solidus.io", class:"flex flex-row items-center gap-1" do %>
-              <span class="font-semibold text-black dark:text-white">SevenMates</span>
-              <svg class='w-5 h-5 fill-black dark:fill-white'>
-                <use xlink:href="<%= image_path('logopetit.png') %>#ri-arrow-right-up-line"></use>
-              </svg>
-            <% end %>
+            <%= render "shared/navigation/theme_switcher" %> <%# Theme switcher %>
           </div>
         </div>
       </nav>

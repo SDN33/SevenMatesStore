@@ -5,11 +5,11 @@
 
 <div class="wrapper grid-container py-12 space-y-10 md:space-y-14">
   <div class="col-span-full space-y-4">
-    <h1 class="font-serif text-h4 md:text-h3">My account</h1>
+    <h1 class="font-serif text-h4 md:text-h3">Mon compte</h1>
     <div class="flex flex-wrap flex-auto gap-4">
       <%= @user.email %>
       <%= form_with(url: logout_path, method: Devise.sign_out_via, local: true) do %>
-        <%= button_tag(t("spree.logout"), class: 'transition-all duration-300 text-black hover:!text-red-500 dark:text-sand underline') %>
+        <%= button_tag(t("se déconnecter"), class: 'transition-all duration-300 text-black hover:!text-red-500 dark:text-sand underline') %>
       <% end %>
     </div>
   </div>

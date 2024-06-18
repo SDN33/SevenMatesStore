@@ -1,98 +1,95 @@
+/* Styles généraux pour le texte */
+.text-white {
+    color: #ffffff; /* Couleur du texte blanche */
+}
+.text-h2.5 {
+    font-size: 2.5rem; /* Taille de police de 2.5 rem */
+}
+.font-serif {
+    font-family: serif; /* Police serif */
+}
+
+
+/* Styles pour votre bannière et vos cartes (déjà existants dans votre code) */
 .banner {
-  background-color: #020202; /* Background color */
-  padding: 50px 0; /* Padding */
-  text-align: center; /* Center the content */
-}
-
-.bannerimg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.img-fluid {
-  max-width: 120%; /* Make the image responsive */
-  height: auto; /* Maintain the image ratio */
-  margin-bottom: 30px; /* Space below the image */
-}
-
-.banner h3, .banner h4 {
-  margin-bottom: 30px; /* Space below the headings */
+    background-color: #020202;
+    padding: 50px 0;
+    text-align: center;
 }
 
 .card-container {
-  display: flex; /* Enable flexbox */
-  justify-content: center; /* Center cards horizontally */
-  align-items: center; /* Center cards vertically */
-  gap: 20px; /* Space between cards */
-  flex-wrap: wrap; /* Allow cards to wrap to the next line on smaller screens */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .card {
-  position: relative; /* Required for overlay positioning */
-  width: 35%; /* Width of the cards */
-  border: none; /* No border */
-  cursor: pointer; /* Pointer cursor */
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
-  background-color: white; /* Background color */
-  border-radius: 10px; /* Rounded corners */
-  overflow: hidden; /* Ensure the overlay stays within the card */
-  display: flex;
-  flex-direction: column; /* Stack card contents vertically */
-  animation: floatAnimation 4s ease-in-out infinite; /* Apply the float animation */
+    position: relative;
+    width: 35%;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    animation: floatAnimation 4s ease-in-out infinite;
 }
 
 .card:hover {
-  transform: translateY(-5px) scale(1.1); /* Move up and enlarge on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
-  background-color: orange; /* Background color on hover */
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: orange;
 }
 
 .card-img {
-  width: 100%; /* Ensure image covers the card */
-  height: auto; /* Maintain aspect ratio */
+    width: 100%;
+    height: auto;
 }
 
 .card-img-overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1.25rem;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.2); /* Optional: semi-transparent background */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1.25rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .banner .card-title {
-  font-size: 1.5rem; /* Title font size */
-  color: white; /* Title color */
-  font-weight: bolder; /* Bold title */
-  margin-bottom: 1rem; /* Space below title */
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bolder;
+    margin-bottom: 1rem;
 }
 
 .banner .card-text {
-  color: black; /* Text color */
-  font-weight: bolder; /* Bold text */
-  margin-top: 12rem; /* Space above text */
+    color: black;
+    font-weight: bolder;
+    margin-top: 12rem;
 }
 
 h3, h4 {
-  font-family: 'The Seasons', sans-serif; /* Font family */
-  font-weight: bolder; /* Bold font */
+    font-family: 'The Seasons', sans-serif;
+    font-weight: bolder;
 }
 
 @keyframes floatAnimation {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
