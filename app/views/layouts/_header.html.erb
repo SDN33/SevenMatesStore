@@ -14,7 +14,7 @@
     <div class="flex items-center gap-x-4 xl:gap-x-8 w-full justify-center lg:justify-start">
       <%= link_to root_path, class: 'absolute lg:relative left-1/2 lg:left-0 lg:-translate-x-0 -translate-x-1/2 flex items-center space-x-3' do %>
         <%= image_tag "logopetit.png", class: "w-12" %>
-        <span class="camelcase font-sans font-semibold mb-0 dark:text-sand text-body lg:text-body-sm xl:text-body-sm"><strong><%= Spree::Store.default.name %></strong></span>
+        <span class="camelcase font-sans font-semibold mb-0 dark:text-sand text-body lg:text-body-sm xl:text-body-sm"><strong>7'Mates.fr</strong></span>
       <% end %>
 
       <% categories = taxonomies.first %>
@@ -44,6 +44,7 @@
         <div class="block my-12">
           <%= render 'shared/search/search_bar', taxons: taxons, taxon: taxon, :locals => { :additional_classes => 'lg:hidden', search_input_id: 'mobile-search-input-area', results_list_id: 'autocomplete-results-mobile' } %>
         </div>
+
 
         <% cache [I18n.locale, categories, taxon] do %>
           <%= render(TaxonsTreeComponent.new(
