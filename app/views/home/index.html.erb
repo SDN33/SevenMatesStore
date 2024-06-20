@@ -1,6 +1,6 @@
 <%= render 'banner', { title: "Bienvenue sur notre store !", subtitle: "L'esprit SEVEN !"} %>
 <%= render 'storytelling' %>
-<%= render 'collection', { title: "Nouveautées", products: @new_arrivals } if @new_arrivals.try(:any?) %>
+<%= render 'collection', { title: "Nouveautés", products: @new_arrivals } if @new_arrivals.try(:any?) %>
 <%= render 'featured_products', { products: @featured_products } if @featured_products.try(:any?) %>
 <%= render 'collection', { title: "Mates Collection", products: @collection_products } if @collection_products.try(:any?) %>
 <%= render 'featured_product_banner', { product: @cta_collection_products[2] } if @cta_collection_products && @cta_collection_products.size > 2 %>

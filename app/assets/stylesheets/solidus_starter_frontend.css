@@ -1,96 +1,101 @@
 /* Styles généraux pour le texte */
 .text-white {
-    color: #ffffff; /* Couleur du texte blanche */
+  color: #ffffff; /* Couleur du texte blanche */
 }
 .text-h2.5 {
-    font-size: 2.5rem; /* Taille de police de 2.5 rem */
+  font-size: 2.5rem; /* Taille de police de 2.5 rem */
 }
 .font-serif {
-    font-family: serif; /* Police serif */
+  font-family: serif; /* Police serif */
 }
-
 
 /* Styles pour votre bannière et vos cartes (déjà existants dans votre code) */
 .banner {
-    background-color: #020202;
-    padding: 50px 0;
-    text-align: center;
+  background-color: #020202;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.bannerimg {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain; /* Use contain to ensure the entire image is visible */
 }
 
 .card-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .card {
-    position: relative;
-    width: 35%;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    animation: floatAnimation 4s ease-in-out infinite;
+  position: relative;
+  width: 35%;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: floatAnimation 4s ease-in-out infinite;
 }
 
 .card:hover {
-    transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background-color: orange;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.8), 0 0 20px rgba(255, 165, 0, 0.6), 0 0 60px rgba(255, 165, 0, 0.4);
+  background-color: silver;
 }
 
 .card-img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .card-img-overlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 1.25rem;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1.25rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .banner .card-title {
-    font-size: 1.5rem;
-    color: white;
-    font-weight: bolder;
-    margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bolder;
+  margin-bottom: 1rem;
 }
 
 .banner .card-text {
-    color: black;
-    font-weight: bolder;
-    margin-top: 12rem;
+  color: black;
+  font-weight: bolder;
+  margin-top: 12rem;
 }
 
 h3, h4 {
-    font-family: 'The Seasons', sans-serif;
-    font-weight: bolder;
+  font-family: 'The Seasons', sans-serif;
+  font-weight: bolder;
 }
 
 @keyframes floatAnimation {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+  100% {
+      transform: translateY(0);
+  }
 }
-

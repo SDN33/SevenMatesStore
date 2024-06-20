@@ -1,9 +1,8 @@
 <div class="banner">
-  <h1 class="text-white text-h2.5 text-center font-serif mb-5 "><strong>Bienvenue sur 7'Mates.fr</strong></h1>
   <div class="container">
-    <div class="text-center mb-5 bannerimg">
+    <div class="text-center mb-5">
       <%= link_to products_path do %>
-        <%= image_tag 'banner.svg', class: 'img-fluid' %>
+        <%= image_tag 'banner.svg', class: 'img-fluid bannerimg' %>
       <% end %>
     </div>
     <div class="card-container"> <!-- Container for flexbox -->
@@ -11,7 +10,6 @@
         <%= link_to '/t/univers/sportswear' do %>
           <%= image_tag 'sportswearbg.png', alt: 'sportswear background', class: 'card-img img-fluid' %>
           <div class="card-img-overlay">
-            <p class="card-text">Découvrez notre gamme SPORT.</p>
           </div>
         <% end %>
       </div>
@@ -19,7 +17,6 @@
         <%= link_to '/t/univers/luxe' do %>
           <%= image_tag 'luxebg.png', alt: 'luxe background', class: 'card-img img-fluid' %>
           <div class="card-img-overlay">
-            <p class="card-text">Explorez notre gamme LUXE pour des occasions spéciales.</p>
           </div>
         <% end %>
       </div>
