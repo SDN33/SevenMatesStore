@@ -1,25 +1,73 @@
-<div class="banner">
-  <div class="container">
-    <div class="text-center mb-5">
-      <%= link_to products_path do %>
-        <%= image_tag 'banner.svg', class: 'img-fluid bannerimg' %>
-      <% end %>
-    </div>
-    <div class="card-container"> <!-- Container for flexbox -->
-      <div class="card text-white">
-        <%= link_to '/t/univers/sportswear' do %>
-          <%= image_tag 'sportswearbg.png', alt: 'sportswear background', class: 'card-img img-fluid' %>
-          <div class="card-img-overlay">
+<head>
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  <!-- Your other CSS files -->
+  <link rel="stylesheet" href="path/to/your/cssfile.css"> <!-- Ensure this path is correct -->
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Your other JS files -->
+</head>
+
+<body>
+  <div class="banner">
+    <div class="container">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide text-center mb-5">
+            <%= link_to products_path do %>
+              <%= image_tag 'banner.svg', class: 'img-fluid bannerimg' %>
+            <% end %>
           </div>
-        <% end %>
+          <div class="swiper-slide text-center mb-5">
+            <%= link_to products_path do %>
+              <%= image_tag 'banner2.svg', class: 'img-fluid bannerimg' %>
+            <% end %>
+          </div>
+        </div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
       </div>
-      <div class="card text-white">
-        <%= link_to '/t/univers/luxe' do %>
-          <%= image_tag 'luxebg.png', alt: 'luxe background', class: 'card-img img-fluid' %>
-          <div class="card-img-overlay">
-          </div>
-        <% end %>
+
+      <div class="card-container"> <!-- Container for flexbox -->
+        <div class="card text-white">
+          <%= link_to '/t/univers/sportswear' do %>
+            <%= image_tag 'sportswearbg.png', alt: 'sportswear background', class: 'card-img img-fluid' %>
+            <div class="card-img-overlay">
+            </div>
+          <% end %>
+        </div>
+        <div class="card text-white">
+          <%= link_to '/t/univers/luxe' do %>
+            <%= image_tag 'luxebg.png', alt: 'luxe background', class: 'card-img img-fluid' %>
+            <div class="card-img-overlay">
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+          delay: 5000, // 5 seconds
+          disableOnInteraction: false,
+        },
+      });
+    });
+  </script>
+</body>

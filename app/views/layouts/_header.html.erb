@@ -1,4 +1,5 @@
-<header class="wrapper grid-container w-full pt-2.5 px-5 lg:px-6 2xl:px-0">
+<!-- Navbar HTML without theme switcher -->
+<header id="main-header" class="wrapper grid-container w-full pt-2.5 px-5 lg:px-6 2xl:px-0">
   <div class="col-span-full flex items-center justify-center max-h-[70px] lg:justify-between lg:gap-x-6">
     <div class="flex items-center justify-center w-8 h-8 lg:py-2 lg:hidden">
       <button type="button" class="inline-flex flex-col gap-y-2 items-center p-2 w-10 h-10 justify-center rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500" aria-controls="navbar-default" aria-expanded="false" data-action="click->drawer#toggle">
@@ -33,6 +34,7 @@
         lg:p-0'
       %>
 
+
       <nav class="<%= navMobileClasses + navDesktopClasses %> text-" data-drawer-target="drawer">
         <button type="button" class="w-8 h-8 self-start -ml-[5px] lg:hidden" aria-controls="navbar-default" aria-expanded="false" data-action="click->drawer#toggle">
           <span class="sr-only">Fermer le menu</span>
@@ -45,7 +47,6 @@
           <%= render 'shared/search/search_bar', taxons: taxons, taxon: taxon, :locals => { :additional_classes => 'lg:hidden', search_input_id: 'mobile-search-input-area', results_list_id: 'autocomplete-results-mobile' } %>
         </div>
 
-
         <% cache [I18n.locale, categories, taxon] do %>
           <%= render(TaxonsTreeComponent.new(
             root_taxon: categories.root,
@@ -55,14 +56,10 @@
             current_item_classes: 'text-solidus-red',
             )) if categories %>
         <% end %>
-
-        <div class="lg:hidden mt-auto">
-          <div class="flex justify-between">
-            <%= render "shared/navigation/theme_switcher" %> <%# Theme switcher %>
-          </div>
-        </div>
       </nav>
     </div>
     <%= render 'layouts/top_bar', taxons: taxons, taxon: taxon %>
+    <a href="/">Contactez nous</a>
+
   </div>
 </header>

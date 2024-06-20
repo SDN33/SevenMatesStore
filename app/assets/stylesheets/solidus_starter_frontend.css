@@ -1,4 +1,8 @@
 /* Styles généraux pour le texte */
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 .text-white {
   color: #ffffff; /* Couleur du texte blanche */
 }
@@ -98,4 +102,10 @@ h3, h4 {
   100% {
       transform: translateY(0);
   }
+}
+
+.storytelling {
+  background-color: #f8f9fa;
+  padding: 50px 0;
+  text-align: center;
 }

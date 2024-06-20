@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 @layer base {
   html,
   body {
@@ -62,7 +66,7 @@
   .checkbox-input {
     @apply flex items-center gap-x-2
   }
-  
+
   input[type=checkbox] {
     @apply text-black rounded dark:checked:invert;
   }
@@ -170,3 +174,23 @@
     @apply grid-cols-none;
   }
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: white; /* Set the background color to white */
+  color: black !important; /* Set the icon color to black */
+  border-radius: 50%; /* Make the buttons round */
+  width: 44px; /* Set a width for the buttons */
+  height: 44px; /* Set a height for the buttons */
+  display: flex; /* Use flexbox to center the icon */
+  align-items: center; /* Vertically center the icon */
+  justify-content: center; /* Horizontally center the icon */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Optional: Add a slight shadow for better visibility */
+}
+
+/* Optional: Change icon color on hover */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: #f0f0f0; /* Slightly darker background on hover */
+}
+
