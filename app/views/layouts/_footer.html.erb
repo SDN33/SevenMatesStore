@@ -5,6 +5,13 @@
         <%= image_tag "logo.png", class: "mx-auto w-14 mb-7 dark:hidden" %>
         <%= image_tag "logo.png", class: "mx-auto w-14 mb-7 hidden dark:block" %>
       </div>
+      <div class="text-center mt-10">
+        <a href="#" class="text-gray-600 dark:text-gray-400 hover:underline mr-6">Conditions de vente</a>
+        <br>
+        <a href="#" class="text-gray-600 dark:text-gray-400 hover:underline">Mentions légales</a>
+        <br><br>
+        <p>© <%= Time.current.year %> <%= Spree::Store.default.name %></p>
+      </div>
       <div class="col-span-full">
         <%= render "shared/social_icons" %>
       </div>
@@ -31,13 +38,7 @@
     <% end %>
 
     <!-- Liens vers les conditions de vente et les mentions légales -->
-    <div class="text-center mt-10">
-      <a href="#" class="text-gray-600 dark:text-gray-400 hover:underline mr-6">Conditions de vente</a>
-      <br>
-      <a href="#" class="text-gray-600 dark:text-gray-400 hover:underline">Mentions légales</a>
-      <br>
-      <p>© <%= Time.current.year %> <%= Spree::Store.default.name %></p>
-    </div>
+
 
   </div>
 </footer>
