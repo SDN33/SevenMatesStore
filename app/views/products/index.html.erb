@@ -10,7 +10,7 @@
   <section class="products_section col-span-full md:col-span-9 lg:col-span-10">
     <% if params[:keywords] && @products.empty? %>
       <h6>
-        <%= t('spree.no_products_found') %>
+        <%= t('Aucun produit trouvé') %>
       </h6>
     <% else %>
       <%= render 'products', products: @products, taxon: @taxon %>

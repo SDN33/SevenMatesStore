@@ -14,7 +14,7 @@ RSpec.describe 'Switching currencies in backend', type: :system do
   it "does not cause current_order to become nil" do
     visit products_path
     click_link "Solidus mug set"
-    click_button "Add To Cart"
+    click_button "Ajouter au panier"
     # Now that we have an order...
     stub_spree_preferences(currency: "AUD")
     visit root_path

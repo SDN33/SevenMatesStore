@@ -124,7 +124,7 @@ RSpec.describe 'Visiting Products', type: :system do
 
       it "when on the 'address' state of the cart", js: true do
         visit product_path(product)
-        click_button 'Add To Cart'
+        click_button 'Ajouter au panier'
         checkout_as_guest
 
         within('#item-total') do

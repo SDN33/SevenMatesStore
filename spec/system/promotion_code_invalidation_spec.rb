@@ -19,11 +19,11 @@ RSpec.describe 'Promotion Code Invalidation', type: :system, js: true do
 
     visit products_path
     click_link "DL-44"
-    click_button "Add To Cart"
+    click_button "Ajouter au panier"
 
     visit products_path
     click_link "E-11"
-    click_button "Add To Cart"
+    click_button "Ajouter au panier"
   end
 
   it 'adding the promotion to a cart with two applicable items' do
@@ -46,7 +46,7 @@ RSpec.describe 'Promotion Code Invalidation', type: :system, js: true do
     # Add it back
     visit products_path
     click_link "DL-44"
-    click_button "Add To Cart"
+    click_button "Ajouter au panier"
     within("#cart_adjustments") do
       expect(page).to have_content("-$10.00")
     end

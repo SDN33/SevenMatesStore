@@ -21,7 +21,7 @@ RSpec.describe 'Quantity Promotions', type: :system, js: true do
 
     visit products_path
     click_link "DL-44"
-    click_button "Add To Cart"
+    click_button "Ajouter au panier"
   end
 
   it 'adding and removing items from the cart' do
@@ -33,7 +33,7 @@ RSpec.describe 'Quantity Promotions', type: :system, js: true do
     # Add another item to our cart.
     visit products_path
     click_link "DL-44"
-    click_button "Add To Cart"
+    click_button "Ajouter au panier"
 
     # Using the code should now succeed.
     fill_in "coupon_code", with: "PROMO"
@@ -81,7 +81,7 @@ RSpec.describe 'Quantity Promotions', type: :system, js: true do
     visit products_path
     click_link "E-11"
     select "2", from: "quantity"
-    click_button "Add To Cart"
+    click_button "Ajouter au panier"
 
     # We now have 5 items total, so discount should increase.
     within("#cart_adjustments") do
@@ -114,7 +114,7 @@ RSpec.describe 'Quantity Promotions', type: :system, js: true do
       # Add two different products to our cart
       visit products_path
       click_link "E-11"
-      click_button "Add To Cart"
+      click_button "Ajouter au panier"
       within("#cart_adjustments") do
         expect(page).to have_content("-$15.00")
       end

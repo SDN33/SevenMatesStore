@@ -33,7 +33,7 @@ RSpec.feature 'Checkout', :js, type: :system do
   scenario 'leaving and returning to address step' do
     stub_spree_preferences(Spree::Auth::Config, registration_step: true)
     click_link 'Solidus hoodie'
-    click_button 'Add To Cart'
+    click_button 'Ajouter au panier'
     within('h1') { expect(page).to have_text 'Shopping Cart' }
     click_button 'Checkout'
 
@@ -52,7 +52,7 @@ RSpec.feature 'Checkout', :js, type: :system do
   context 'without payment being required' do
     scenario 'allow a visitor to checkout as guest, without registration' do
       click_link 'Solidus hoodie'
-      click_button 'Add To Cart'
+      click_button 'Ajouter au panier'
       within('h1') { expect(page).to have_text 'Shopping Cart' }
       click_button 'Checkout'
 
@@ -78,7 +78,7 @@ RSpec.feature 'Checkout', :js, type: :system do
     scenario 'associate an uncompleted guest order with user after logging in' do
       user = create(:user, email: 'email@person.com', password: 'password', password_confirmation: 'password')
       click_link 'Solidus hoodie'
-      click_button 'Add To Cart'
+      click_button 'Ajouter au panier'
 
       visit login_path
       fill_in 'Email', with: user.email
@@ -107,7 +107,7 @@ RSpec.feature 'Checkout', :js, type: :system do
     scenario 'associate an incomplete guest order with user after successful password reset' do
       create(:user, email: 'email@person.com', password: 'password', password_confirmation: 'password')
       click_link 'Solidus hoodie'
-      click_button 'Add To Cart'
+      click_button 'Ajouter au panier'
 
       visit login_path
       click_link 'Forgot Password?'
@@ -136,7 +136,7 @@ RSpec.feature 'Checkout', :js, type: :system do
 
     scenario 'allow a user to register during checkout' do
       click_link 'Solidus hoodie'
-      click_button 'Add To Cart'
+      click_button 'Ajouter au panier'
       click_button 'Checkout'
 
       within '#existing-customer' do
