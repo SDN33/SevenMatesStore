@@ -18,7 +18,7 @@
     <%= render 'users/users_menu' %>
 
     <div class="col-span-full md:col-span-10 md:col-start-3">
-      <h2 class="font-serif text-h4 md:text-h4 mb-6"><%= I18n.t('spree.my_orders') %></h2>
+      <h2 class="font-serif text-h4 md:text-h4 mb-6"><%= t('Mes commandes') %></h2>
       <% if @orders.present? %>
         <div class="bg-white rounded-xl border border-gray-300 p-6 relative overflow-auto no-scrollbar dark:bg-black dark:border-gray-700">
           <table class="border-collapse w-full table-auto">
@@ -27,8 +27,8 @@
                 <th class="<%= table_head_classes %>"><%= I18n.t(:number, scope: 'activerecord.attributes.spree/order') %></th>
                 <th class="<%= table_head_classes %>"><%= I18n.t('spree.date') %></th>
                 <th class="<%= table_head_classes %>"><%= I18n.t('spree.status') %></th>
-                <th class="<%= table_head_classes %>"><%= I18n.t('spree.payment_state') %></th>
-                <th class="<%= table_head_classes %>"><%= I18n.t('spree.shipment_state') %></th>
+                <th class="<%= table_head_classes %>"><%= t('Statut du paiement') %></th>
+                <th class="<%= table_head_classes %>"><%= t('Statut de la livraison') %></th>
                 <th class="<%= table_head_classes %>"><%= I18n.t('spree.total') %></th>
               </tr>
             </thead>
@@ -58,7 +58,7 @@
         </div>
         <% else %>
 
-        <p class="rounded-lg bg-black text-white text-center p-4 mt-4 inline-block"><%= I18n.t('spree.you_have_no_orders_yet') %></p>
+        <p class="rounded-lg bg-black text-white text-center p-4 mt-4 inline-block"><%= t('Aucune commande trouvée') %></p>
       <% end %>
     </div>
   </div>

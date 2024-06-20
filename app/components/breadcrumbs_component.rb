@@ -56,8 +56,9 @@ class BreadcrumbsComponent < ViewComponent::Base
     return @crumbs if @crumbs
 
     @crumbs = [
-      { name: t('spree.home'), url: helpers.root_path },
-      { name: t('spree.products'), url: helpers.products_path }
+      { name: t('Accueil'), url: helpers.root_path },
+      { name: t('Panier'), url: helpers.products_path }
+      
     ]
 
     if(taxon)

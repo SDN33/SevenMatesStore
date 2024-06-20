@@ -27,7 +27,7 @@ RSpec.describe 'Quantity Promotions', type: :system, js: true do
   it 'adding and removing items from the cart' do
     # Attempt to use the code with too few items.
     fill_in "coupon_code", with: "PROMO"
-    click_button "Apply Code"
+    click_button "Appliquer le code"
     expect(page).to have_content("This coupon code could not be applied to the cart at this time")
 
     # Add another item to our cart.
@@ -37,7 +37,7 @@ RSpec.describe 'Quantity Promotions', type: :system, js: true do
 
     # Using the code should now succeed.
     fill_in "coupon_code", with: "PROMO"
-    click_button "Apply Code"
+    click_button "Appliquer le code"
     expect(page).to have_content("The coupon code was successfully applied to your order")
     within("#cart_adjustments") do
       expect(page).to have_content("-$10.00")
@@ -71,7 +71,7 @@ RSpec.describe 'Quantity Promotions', type: :system, js: true do
 
     # Apply the promo code and see a $10 discount (for 2 of the 3 items)
     fill_in "coupon_code", with: "PROMO"
-    click_button "Apply Code"
+    click_button "Appliquer le code"
     expect(page).to have_content("The coupon code was successfully applied to your order")
     within("#cart_adjustments") do
       expect(page).to have_content("-$10.00")
@@ -105,7 +105,7 @@ RSpec.describe 'Quantity Promotions', type: :system, js: true do
 
       # Apply the promo code and see a $15 discount
       fill_in "coupon_code", with: "PROMO"
-      click_button "Apply Code"
+      click_button "Appliquer le code"
       expect(page).to have_content("The coupon code was successfully applied to your order")
       within("#cart_adjustments") do
         expect(page).to have_content("-$15.00")

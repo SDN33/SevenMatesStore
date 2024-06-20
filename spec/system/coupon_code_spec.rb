@@ -53,23 +53,23 @@ RSpec.describe 'Coupon code promotions', type: :system, js: true do
 
         it "informs about an invalid coupon code" do
           fill_in "order_coupon_code", with: "coupon_codes_rule_man"
-          click_button "Apply Code"
+          click_button "Appliquer le code"
           expect(page).to have_content(I18n.t('spree.coupon_code_not_found'))
         end
 
         it "can enter an invalid coupon code, then a real one" do
           fill_in "order_coupon_code", with: "coupon_codes_rule_man"
-          click_button "Apply Code"
+          click_button "Appliquer le code"
           expect(page).to have_content(I18n.t('spree.coupon_code_not_found'))
           fill_in "order_coupon_code", with: "onetwo"
-          click_button "Apply Code"
+          click_button "Appliquer le code"
           expect(page).to have_content("Promotion (Onetwo) -$10.00", normalize_ws: true)
         end
 
         context "with a promotion" do
           it "applies a promotion to an order" do
             fill_in "order_coupon_code", with: "onetwo"
-            click_button "Apply Code"
+            click_button "Appliquer le code"
             expect(page).to have_content("Promotion (Onetwo) -$10.00", normalize_ws: true)
           end
         end
@@ -108,7 +108,7 @@ RSpec.describe 'Coupon code promotions', type: :system, js: true do
 
           it "shows wallet payments on coupon code errors" do
             fill_in "order_coupon_code", with: "coupon_codes_rule_man"
-            click_button "Apply Code"
+            click_button "Appliquer le code"
 
             expect(page).to have_content("The coupon code you entered doesn't exist. Please try again.")
             expect(page).to have_content("Payment Information")
@@ -128,13 +128,13 @@ RSpec.describe 'Coupon code promotions', type: :system, js: true do
 
       it "can enter a coupon code and receives success notification" do
         fill_in "coupon_code", with: "onetwo"
-        click_button "Apply Code"
+        click_button "Appliquer le code"
         expect(page).to have_content(I18n.t('spree.coupon_code_applied'))
       end
 
       it "can enter a promotion code with both upper and lower case letters" do
         fill_in "coupon_code", with: "ONETwO"
-        click_button "Apply Code"
+        click_button "Appliquer le code"
         expect(page).to have_content(I18n.t('spree.coupon_code_applied'))
       end
 
@@ -142,7 +142,7 @@ RSpec.describe 'Coupon code promotions', type: :system, js: true do
         expect_any_instance_of(Spree::Promotion).to receive(:usage_limit_exceeded?).and_return(true)
 
         fill_in "coupon_code", with: "onetwo"
-        click_button "Apply Code"
+        click_button "Appliquer le code"
         expect(page).to have_content(I18n.t('spree.coupon_code_max_usage'))
       end
 
@@ -158,7 +158,7 @@ RSpec.describe 'Coupon code promotions', type: :system, js: true do
           visit cart_path
 
           fill_in "coupon_code", with: "onetwo"
-          click_button "Apply Code"
+          click_button "Appliquer le code"
           expect(page).to have_content(I18n.t(:item_total_less_than_or_equal, scope: [:spree, :eligibility_errors, :messages], amount: "$100.00"))
         end
       end
@@ -168,7 +168,7 @@ RSpec.describe 'Coupon code promotions', type: :system, js: true do
         promotion.starts_at = Date.today.beginning_of_week.advance(day: 3)
         promotion.save!
         fill_in "coupon_code", with: "onetwo"
-        click_button "Apply Code"
+        click_button "Appliquer le code"
         expect(page).to have_content(I18n.t('spree.coupon_code_expired'))
       end
 
@@ -189,7 +189,7 @@ RSpec.describe 'Coupon code promotions', type: :system, js: true do
 
           visit cart_path
           fill_in "coupon_code", with: "onetwo"
-          click_button "Apply Code"
+          click_button "Appliquer le code"
 
           select "2", from: "order_line_items_attributes_0_quantity"
           select "2", from: "order_line_items_attributes_1_quantity"
@@ -235,7 +235,7 @@ RSpec.describe 'Coupon code promotions', type: :system, js: true do
           end
 
           fill_in "coupon_code", with: "onetwo"
-          click_button "Apply Code"
+          click_button "Appliquer le code"
 
           within '#cart_adjustments' do
             expect(page).to have_content("Promotion (Onetwo) -$30.00", normalize_ws: true)

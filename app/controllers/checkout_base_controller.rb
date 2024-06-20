@@ -47,7 +47,7 @@ class CheckoutBaseController < StoreController
   def ensure_sufficient_stock_lines
     if @order.insufficient_stock_lines.present?
       out_of_stock_items = @order.insufficient_stock_lines.collect(&:name).to_sentence
-      flash[:error] = t('spree.inventory_error_flash_for_insufficient_quantity', names: out_of_stock_items)
+      flash[:error] = t('Nous sommes désolés, mais certains articles sont en rupture de stock', names: out_of_stock_items)
       redirect_to cart_path
     end
   end
@@ -61,7 +61,7 @@ class CheckoutBaseController < StoreController
   def insufficient_stock_error
     packages = @order.shipments.map(&:to_package)
     if packages.empty?
-      flash[:error] = I18n.t('spree.insufficient_stock_for_order')
+      flash[:error] = t('Nous sommes désolés, mais certains articles sont en rupture de stock')
       redirect_to cart_path
     else
       availability_validator = Spree::Stock::AvailabilityValidator.new

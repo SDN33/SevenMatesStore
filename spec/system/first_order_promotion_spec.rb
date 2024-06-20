@@ -24,7 +24,7 @@ RSpec.describe 'First Order promotion', type: :system do
 
   it 'Adding first order promotion to cart and checking out as guest' do
     fill_in "Coupon code", with: "FIRSTONEFREE"
-    click_button "Apply Code"
+    click_button "Appliquer le code"
     expect(page).to have_content("The coupon code was successfully applied to your order")
 
     within("#cart_adjustments") do
@@ -39,7 +39,7 @@ RSpec.describe 'First Order promotion', type: :system do
     )
     _previous_order = create(:completed_order_with_totals, user: previous_user)
     fill_in "Coupon code", with: "FIRSTONEFREE"
-    click_button "Apply Code"
+    click_button "Appliquer le code"
     expect(page).to have_content("The coupon code was successfully applied to your order")
     checkout_as_guest
     fill_in "Customer email", with: "sam@tom.com"

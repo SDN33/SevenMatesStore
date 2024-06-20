@@ -3,9 +3,9 @@
 
   <div class="text-input">
     <% "name_on_card_#{payment_method.id}".tap do |id| %>
-      <%= label_tag id, "#{t('spree.name_on_card')}:" %>
+      <%= label_tag id, "#{t('nom sur la carte')}:" %>
 
-      <%= text_field_tag "#{param_prefix}[name]",
+      <%= text_field_tag "#{param_prefix}[nom]",
         @order.billing_name,
         id: id,
         autocomplete: "cc-name"
@@ -15,9 +15,9 @@
 
   <div class="text-input">
     <% "card_number_#{payment_method.id}".tap do |id| %>
-      <%= label_tag id, "#{t('spree.card_number')}:" %>
+      <%= label_tag id, "#{t('numéro de carte')}:" %>
 
-      <%= text_field_tag "#{param_prefix}[number]",
+      <%= text_field_tag "#{param_prefix}[numéro]",
         nil,
         id: id,
         placeholder: "xxxx xxxx xxxx xxxx",
@@ -31,10 +31,10 @@
       <% "card_expiry_#{payment_method.id}".tap do |id| %>
         <%= label_tag id, "#{t('spree.expiration')}:" %>
 
-        <%= text_field_tag "#{param_prefix}[expiry]",
+        <%= text_field_tag "#{param_prefix}[expire]",
           nil,
           id: id,
-          placeholder: "MM / YY"
+          placeholder: "MM / AA"
         %>
       <% end %>
     </div>

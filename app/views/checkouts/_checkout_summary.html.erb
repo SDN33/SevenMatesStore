@@ -2,7 +2,7 @@
 
 <section class="checkout-summary p-6 bg-gray-50 h-full text-black dark:bg-gray-800 dark:text-sand" id="checkout-summary">
   <h2 class="checkout-summary__title font-serif mb-6 text-h6 md:text-h5">
-    <%= t('spree.order_summary') %>
+    <%= t('facture') %>
   </h2>
 
   <div class="mb-6">
@@ -14,7 +14,7 @@
   <dl>
     <div class="pb-7 border-b-[1px] border-b-gray-200">
       <div class="checkout-summary__entry <%= dl_classes %>" id="item-total">
-        <dt><%= t('spree.item_total') %>:</dt>
+        <dt><%= t('panier') %>:</dt>
         <dd><%= order.display_item_total.to_html %></dd>
       </div>
 
@@ -36,7 +36,7 @@
 
       <% if order.passed_checkout_step?("delivery") && order.shipments.any? %>
         <div class="checkout-summary__entry <%= dl_classes %>">
-          <dt><%= t('spree.shipping_total') %>:</dt>
+          <dt><%= t('livraison') %>:</dt>
           <dd><%= Spree::Money.new(order.shipments.to_a.sum(&:cost), currency: order.currency).to_html %></dd>
         </div>
 
@@ -68,7 +68,7 @@
     </div>
 
     <div class="checkout-summary__total <%= dl_classes %> pt-7">
-      <dt class="text-body-20"><%= t('spree.order_total') %>:</dt>
+      <dt class="text-body-20"><%= t('Prix total') %>:</dt>
       <dd class="text-body-20"><%= order.display_order_total_after_store_credit.to_html %></dd>
     </div>
   </dl>

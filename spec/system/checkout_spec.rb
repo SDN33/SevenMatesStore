@@ -532,9 +532,9 @@ RSpec.describe 'Checkout', :js, type: :system do
       expect(page).to have_current_path(checkout_state_path("payment"))
     end
 
-    it "applies them & refreshes the page on user clicking the Apply Code button" do
+    it "applies them & refreshes the page on user clicking the Appliquer le code button" do
       fill_in "order_coupon_code", with: promotion.codes.first.value
-      click_on "Apply Code"
+      click_on "Appliquer le code"
 
       expect(page).to have_content(promotion.name)
       expect(page).to have_content("-$2.00")
@@ -543,7 +543,7 @@ RSpec.describe 'Checkout', :js, type: :system do
     context "with invalid coupon" do
       it "doesnt apply the promotion" do
         fill_in "order_coupon_code", with: 'invalid'
-        click_on "Apply Code"
+        click_on "Appliquer le code"
 
         expect(page).to have_content(I18n.t('spree.coupon_code_not_found'))
       end

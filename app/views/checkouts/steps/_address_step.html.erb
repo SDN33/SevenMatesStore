@@ -3,7 +3,7 @@
 <div class="address-step flex flex-col gap-y-6">
   <fieldset class="address-step__billing contents" id="billing">
     <legend class="font-serif text-h5 md:text-h4">
-      <%= t("spree.billing_address") %>
+      <%= t("Adresse de facturation") %>
     </legend>
 
     <%= form.fields_for :bill_address do |bill_form| %>
@@ -18,13 +18,13 @@
 
   <fieldset class="address-step__shipping border-b-[1px] pb-6 border-b-gray-mid" id="shipping">
     <legend class="font-serif mb-6 text-h5 md:text-h4">
-      <%= t('spree.shipping_address') %>
+      <%= t('Adresse de livraison') %>
     </legend>
 
     <%= form.fields_for :ship_address do |ship_form| %>
       <%= label_tag 'order_use_billing', class: 'checkbox-input mb-5' do %>
         <%= check_box_tag('order[use_billing]', 1, order.shipping_eq_billing_address?) %>
-        <%= t('spree.use_billing_address') %>
+        <%= t('utiliser_adresse_de_facturation_pour_ladresse_de_livraison') %>
       <% end %>
 
       <%= render(
@@ -46,12 +46,12 @@
           spree_current_user.respond_to?(:persist_order_address),
           id: 'save-user-address'
         ) %>
-        <%= I18n.t("spree.save_my_address") %>
+        <%= t("enregistrer_cette_adresse") %>
       <% end %>
     <% end %>
 
     <%= form.button(
-      I18n.t("spree.save_and_continue"),
+      t("enregistrer et continuer"),
       class: 'button-primary',
       name: :commit
     ) %>

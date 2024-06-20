@@ -15,7 +15,7 @@ class OrdersController < StoreController
   private
 
   def accurate_title
-    t('spree.order_number', number: @order.number)
+    t('numero de commande', number: @order.number)
   end
 
   def store_guest_token

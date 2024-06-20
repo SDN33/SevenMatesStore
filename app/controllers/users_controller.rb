@@ -42,7 +42,7 @@ class UsersController < StoreController
           bypass_sign_in(@user)
         end
       end
-      redirect_to redirect_url, notice: I18n.t('spree.account_updated')
+      redirect_to redirect_url, notice: t('Votre compte a été mis à jour avec succès')
     else
       render :edit
     end
@@ -64,6 +64,6 @@ class UsersController < StoreController
   end
 
   def accurate_title
-    I18n.t('spree.my_account')
+    I18n.t('my_account')
   end
 end

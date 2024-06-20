@@ -14,8 +14,8 @@ class CartsController < StoreController
   def show
     @order = current_order(build_order_if_necessary: true)
     authorize! :edit, @order, cookies.signed[:guest_token]
-    if params[:id] && @order.number != params[:id]
-      flash[:error] = t('spree.cannot_edit_orders')
+    if (params[:id] && @order.number) != params[:id]
+      flash[:error] = t('Nous ne pouvons pas accéder à cette commande.')
       redirect_to cart_path
     end
   end
@@ -51,7 +51,7 @@ class CartsController < StoreController
   private
 
   def accurate_title
-    t('Mon panier')
+    t('spree.shopping_cart')
   end
 
   def store_guest_token
@@ -69,7 +69,7 @@ class CartsController < StoreController
   def assign_order
     @order = current_order
     unless @order
-      flash[:error] = t('spree.order_not_found')
+      flash[:error] = t('Votre commande ne peut pas être trouvée.')
       redirect_to(root_path) && return
     end
   end

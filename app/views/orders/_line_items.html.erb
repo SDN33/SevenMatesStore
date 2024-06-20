@@ -12,7 +12,7 @@
 
 <dl class="<%= class_names %>" id="line-items">
   <div class="<%= line_class_names %>">
-    <dt><%= t('spree.subtotal') %></dt>
+    <dt><%= t('total') %></dt>
     <dd><%= order.display_item_total.to_html %></dd>
   </div>
 
@@ -29,7 +29,7 @@
 
   <div id="shipment-total" class="<%= line_class_names %>">
     <% order.shipments.group_by { |s| s.selected_shipping_rate.name }.each do |name, shipments| %>
-      <dt><%= t('spree.shipping') %> &mdash; <%= name %></dt>
+      <dt><%= t('spree.livraison') %> &mdash; <%= name %></dt>
       <dd class="font-sans-md"><%= Spree::Money.new(shipments.sum(&:total_before_tax), currency: order.currency).to_html %></dd>
     <% end %>
   </div>
@@ -37,7 +37,7 @@
   <% if order.all_adjustments.tax.exists? %>
     <div id="tax-adjustments" class="<%= line_class_names %>">
       <% order.all_adjustments.tax.group_by(&:label).each do |label, adjustments| %>
-        <dt><%= t('spree.tax') %> &mdash; <%= label %></dt>
+        <dt><%= t('spree.taxes') %> &mdash; <%= label %></dt>
         <dd class="font-sans-md"><%= Spree::Money.new(adjustments.sum(&:amount), currency: order.currency) %></dd>
       <% end %>
     </div>

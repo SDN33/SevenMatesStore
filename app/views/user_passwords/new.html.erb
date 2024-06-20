@@ -10,14 +10,14 @@
 
       <div class="text-center flex flex-col gap-6 items-center">
         <%= f.button(
-          t("spree.reset_password"),
+          t("Nouveau mot de passe"),
           class: 'w-fit py-3 px-7 rounded-full text-body-sm font-bold leading-none uppercase whitespace-nowrap transiton-colors duration-200 bg-red-500 text-white hover:bg-red-700',
           name: :commit
         ) %>
       </div>
 
       <div class="mt-12 text-center">
-        <%= I18n.t("spree.or") %> <%= link_to I18n.t("Créer un compte"), signup_path, class:"transition-all duration-300 text-black hover:!text-red-500 dark:text-sand underline" %>
+        <%= I18n.t("ou") %> <%= link_to I18n.t("Créer un compte"), signup_path, class:"transition-all duration-300 text-black hover:!text-red-500 dark:text-sand underline" %>
       </div>
 
     <% end %>

@@ -5,17 +5,17 @@
         <%= render(
           'orders/address_overview',
           address: order.bill_address,
-          title: t('spree.billing_address')
+          title: t('Adresse de facturation')
         ) %>
       </div>
     <% end %>
-    
+
     <% if order.has_checkout_step?("delivery") %>
       <div class="col-span-full lg:col-span-3">
         <%= render(
           'orders/address_overview',
           address: order.ship_address,
-          title: t('spree.shipping_address')
+          title: t('Adresse de livraison')
         ) %>
       </div>
     <% end %>
@@ -25,7 +25,7 @@
         <%= render(
           'orders/order_shipments',
           order: order,
-          title: t('spree.shipments')
+          title: t('Livraison')
         ) %>
       </div>
     <% end %>
