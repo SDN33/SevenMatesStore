@@ -113,6 +113,7 @@ h3, h4 {
   padding: 20px;
 }
 
+
 /* Flex row for para1 and para5 */
 .flex-container {
   display: flex;
@@ -129,4 +130,27 @@ h3, h4 {
   justify-content: center;
 }
 
+/* Style pour l'image de l'échiquier */
+#chess, #chess-flipped {
+  width: 50px; /* Ajustez la taille selon vos besoins */
+  height: 50px; /* Ajustez la taille selon vos besoins */
+}
+
+/* Style pour l'image retournée horizontalement */
+.flipped {
+  transform: scaleX(-1);
+}
+
+#paypal {
+  width: 200px; /* Ajustez la taille selon vos besoins */
+  display: flex; /* Utilisation de Flexbox pour le positionnement */
+  align-items: center; /* Centrage vertical */
+  justify-content: center; /* Centrage horizontal */
+  margin: 0 auto; /* Pour centrer horizontalement le bloc entier */
+}
+
+#user {
+  width: 50px; /* Ajustez la taille selon vos besoins */
+  height: 50px; /* Ajustez la taille selon vos besoins */
+}
 

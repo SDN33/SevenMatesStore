@@ -26,6 +26,11 @@
               <%= image_tag 'banner2.svg', class: 'img-fluid bannerimg' %>
             <% end %>
           </div>
+          <div class="swiper-slide text-center mb-5">
+            <%= link_to products_path do %>
+              <%= image_tag 'banner3.svg', class: 'img-fluid  bannerimg' %>
+            <% end %>
+          </div>
         </div>
         <!-- Add Navigation -->
         <div class="swiper-button-next"></div>
@@ -47,7 +52,10 @@
             </div>
           <% end %>
         </div>
+        <br>
       </div>
+      <br><br>
+      <img src="<%= image_path('paypalbadge.webp') %>" alt="paypal" id="paypal">
     </div>
   </div>
 

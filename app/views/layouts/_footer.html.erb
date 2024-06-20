@@ -5,10 +5,9 @@
         <%= image_tag "logo.png", class: "mx-auto w-14 mb-7 dark:hidden" %>
         <%= image_tag "logo.png", class: "mx-auto w-14 mb-7 hidden dark:block" %>
       </div>
-      <div class="text-center mt-10">
-        <a href="#" class="text-gray-600 dark:text-gray-400 hover:underline mr-6">Conditions de vente</a>
-        <br>
-        <a href="#" class="text-gray-600 dark:text-gray-400 hover:underline">Mentions légales</a>
+      <div class="text-center mt-10 align-text-center">
+        <a href="#" class="hover:underline mr-6">Conditions de vente</a>
+        <a href="#" class="hover:underline">Mentions légales</a>
         <br><br>
         <p>© <%= Time.current.year %> <%= Spree::Store.default.name %></p>
       </div>
@@ -26,18 +25,6 @@
         ]
       end.sort
     %>
-    <% if available_locales.many? %>
-      <div class="locale-selector">
-        <%= form_tag select_locale_path do %>
-          <div class="locale-selector__select-input select-input">
-            <%= label_tag :switch_to_locale, "#{t('spree.i18n.language')}:" %>
-            <%= select_tag(:switch_to_locale, options_for_select(available_locales, I18n.locale)) %>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-
-    <!-- Liens vers les conditions de vente et les mentions légales -->
 
 
   </div>
