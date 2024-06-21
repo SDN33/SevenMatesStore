@@ -51,7 +51,7 @@ class CartsController < StoreController
   private
 
   def accurate_title
-    t('spree.shopping_cart')
+    t('shopping_cart')
   end
 
   def store_guest_token

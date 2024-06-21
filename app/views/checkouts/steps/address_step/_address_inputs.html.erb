@@ -5,35 +5,35 @@
 
 <div class="address-inputs <%= classes %>">
   <div class="text-input">
-    <%= form.label :name, "#{I18n.t("spree.name")}:" %>
+    <%= form.label :name, "#{I18n.t("name")}:" %>
     <%= form.text_field :name, required: true, autofocus: true, autocomplete: "#{address_type} given-name" %>
   </div>
 
   <% if Spree::Config[:company] %>
     <div class="text-input">
-      <%= form.label :company, "#{I18n.t("spree.company")}:" %>
+      <%= form.label :company, "#{I18n.t("company")}:" %>
       <%= form.text_field :company, autocomplete: "#{address_type} organization" %>
     </div>
   <% end %>
 
   <div class="text-input">
-    <%= form.label :address1, "#{I18n.t("spree.street_address")}:" %>
+    <%= form.label :address1, "#{I18n.t("street_address")}:" %>
     <%= form.text_field :address1, required: true, autocomplete: "#{address_type} address-line1" %>
   </div>
 
   <div class="text-input">
-    <%= form.label :address2, "#{I18n.t("spree.street_address_2")}:" %>
+    <%= form.label :address2, "#{I18n.t("street_address_2")}:" %>
     <%= form.text_field :address2, autocomplete: "#{address_type} address-line2" %>
   </div>
 
   <div class="text-input">
-    <%= form.label :city, "#{I18n.t("spree.city")}:" %>
+    <%= form.label :city, "#{I18n.t("city")}:" %>
     <%= form.text_field :city, required: true, autocomplete: "#{address_type} address-level2" %>
   </div>
 
   <div class="flex flex-col gap-3 md:gap-6 md:flex-row">
     <div class="select-input w-full">
-      <%= form.label :country_id, "#{I18n.t("spree.country")}:" %>
+      <%= form.label :country_id, "#{I18n.t("country")}:" %>
 
       <%= form.collection_select(
         :country_id,
@@ -53,7 +53,7 @@
 
       <span class="js-address-fields w-full" style="display: none;">
         <div class="select-input w-full">
-          <%= form.label :state_id, "#{I18n.t("spree.state")}:" %>
+          <%= form.label :state_id, "#{I18n.t("state")}:" %>
 
           <%= form.collection_select(
             :state_id,
@@ -88,7 +88,7 @@
   </div>
 
   <div class="text-input">
-    <%= form.label :zipcode, "#{I18n.t("spree.zip")}:" %>
+    <%= form.label :zipcode, "#{I18n.t("zip")}:" %>
 
     <%= form.text_field :zipcode,
       required: address.require_zipcode?,
@@ -97,7 +97,7 @@
   </div>
 
   <div class="text-input">
-    <%= form.label :phone, "#{I18n.t("spree.phone")}:" %>
+    <%= form.label :phone, "#{I18n.t("phone")}:" %>
 
     <%= form.telephone_field :phone,
       required: address.require_phone?,

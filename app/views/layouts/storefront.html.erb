@@ -8,23 +8,27 @@
     <%= canonical_tag(current_store.url) %>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag 'solidus_starter_frontend' %>
-    <%= stylesheet_link_tag 'solidus_starter_frontend', media: 'screen' %>
+    <!-- Preload script and stylesheet -->
+    <link rel="preload" href="<%= asset_path('solidus_starter_frontend.js') %>" as="script">
+    <link rel="preload" href="<%= asset_path('solidus_starter_frontend.css') %>" as="style">
 
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'solidus_starter_frontend', media: 'screen', "data-turbo-track": "reload" %>
+
+    <%= javascript_include_tag 'solidus_starter_frontend', "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
     <%= favicon_link_tag 'logopetit', rel: 'icon', type: 'image/ico' %>
 
     <script>
-      const lsTheme = localStorage.getItem('theme') || 'light'
-      document.documentElement.classList.add(lsTheme)
+      const lsTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.classList.add(lsTheme);
     </script>
 
     <%= yield :head %>
   </head>
 
-  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-turbo="false"  data-controller="drawer">
+  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-turbo="false" data-controller="drawer">
     <div class="min-h-screen grid grid-rows-[auto_1fr_auto]">
       <%= render 'layouts/header', taxons: @taxons, taxon: @taxon %>
       <main>

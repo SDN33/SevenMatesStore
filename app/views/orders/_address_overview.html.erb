@@ -3,7 +3,7 @@
     <h3 class="address-overview__title font-sans-md text-body lg:text-body-md">
       <%= title %>
     </h3>
-    
+
     <%= link_to(
       t('spree.actions.edit'),
       checkout_state_path(:address),
@@ -28,13 +28,13 @@
     <li><%= address.country.try(:name) %></li>
     <% unless address.phone.blank? %>
       <li>
-        <%= t('spree.phone') %>
+        <%= t('téléphone') %>
         <%= address.phone %>
       </li>
     <% end %>
     <% unless address.alternative_phone.blank? %>
       <li>
-        <%= t('spree.alternative_phone') %>
+        <%= t('autre_téléphone') %>
         <%= address.alternative_phone %>
       </li>
     <% end %>

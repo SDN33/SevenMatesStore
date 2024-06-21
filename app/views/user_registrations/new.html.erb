@@ -1,6 +1,6 @@
 <article class="wrapper grid-container py-12" id="new-customer">
   <div class="col-span-full md:col-start-5 md:col-span-4">
-    <h1 class="font-serif text-h4 md:text-h3 text-center"><%= I18n.t('spree.new_customer') %></h1>
+    <h1 class="font-serif text-h4 md:text-h3 text-center"><%= t("Créer un compte") %></h1>
 
     <%= render 'shared/error_messages', target: resource %>
 
@@ -28,7 +28,7 @@
       </div>
 
       <div class="mt-12 text-center">
-        <%= I18n.t("spree.or") %> <%= link_to I18n.t("spree.login_as_existing"), login_path, class:"transition-all duration-300 text-black hover:!text-red-500 dark:text-sand underline" %>
+        <%= t("spree.ou") %> <%= link_to t("spree.se_connecter"), login_path, class:"transition-all duration-300 text-black hover:!text-red-500 dark:text-sand underline" %>
       </div>
 
     <% end %>

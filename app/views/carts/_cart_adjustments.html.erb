@@ -39,7 +39,7 @@
   <% @order.adjustments.eligible.group_by(&:label).each do |label, adjustments| %>
     <%= render(
       "carts/cart_adjustment",
-      type: t('spree.adjustment'),
+      type: t('réduction'),
       label: label,
       adjustments: adjustments
     ) %>
