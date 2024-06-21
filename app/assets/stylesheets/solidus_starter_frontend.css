@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
 /* Styles généraux pour le texte */
 html, body {
   overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -141,6 +144,8 @@ h3, h4 {
   transform: scaleX(-1);
 }
 
+
+
 #paypal {
   width: 200px; /* Ajustez la taille selon vos besoins */
   display: flex; /* Utilisation de Flexbox pour le positionnement */
@@ -154,3 +159,8 @@ h3, h4 {
   height: 50px; /* Ajustez la taille selon vos besoins */
 }
 
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}

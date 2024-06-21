@@ -5,14 +5,15 @@
     <% taxonomies.each do |taxonomy| %>
       <% cache [I18n.locale, taxonomy, taxon, max_level] do %>
         <%= render(TaxonsTreeComponent.new(
-          title: t('spree.categories'),
+          title: t('Trier par'),
           root_taxon: taxonomy.root,
           current_taxon: taxon,
           max_level: max_level,
           item_classes: 'mb-2.5 hover:underline underline-offset-8 w-fit flex',
           current_item_classes: 'underline',
-          title_classes: 'font-sans-md mb-3'
-          )) %>
+          title_classes: 'bebas-neue-regular text-h3 mb-3',
+          )) if taxonomy.root.children.any? %>
+
       <% end %>
     <% end %>
   <% end %>

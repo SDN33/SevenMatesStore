@@ -10,7 +10,7 @@
 
     <% if Spree::Config[:shipping_instructions] %>
       <div class="textarea-input">
-        <%= form.label :special_instructions, "#{I18n.t('spree.shipping_instructions')}:" %>
+        <%= form.label :special_instructions, "#{I18n.t('shipping_instructions')}:" %>
         <%= form.text_area :special_instructions %>
       </div>
     <% end %>
@@ -18,7 +18,7 @@
 
   <div class="flex justify-end py-6">
     <%= form.button(
-      I18n.t("spree.save_and_continue"),
+      I18n.t("save_and_continue"),
       class: 'button-primary',
       name: :commit
     ) %>

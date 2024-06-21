@@ -66,6 +66,8 @@ RSpec.shared_context 'fr locale' do
       order_completed_message_with_details: 'Votre commande a été terminée avec succès. Vous pouvez consulter les détails de votre commande ci-dessous.',
       included_in_price: 'Inclus dans le prix',
       additional_tax_total: 'Total des taxes supplémentaires',
+      under: 'en dessous de',
+      over: 'au-dessus de',
 
     })
     I18n.locale = :fr # assurez-vous que la locale est définie sur :fr

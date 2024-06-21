@@ -15,7 +15,7 @@
     <div class="flex items-center gap-x-4 xl:gap-x-8 w-full justify-center lg:justify-start">
       <%= link_to root_path, class: 'absolute lg:relative left-1/2 lg:left-0 lg:-translate-x-0 -translate-x-1/2 flex items-center space-x-3' do %>
         <%= image_tag "logopetit.png", class: "w-12" %>
-        <span class="camelcase font-sans font-semibold mb-0 dark:text-sand text-body lg:text-body-sm xl:text-body-sm"><strong>7'Mates.fr</strong></span>
+        <span class="camelcase bebas-neue-regular font-semibold mb-0 dark:text-sand text-body lg:text-body-sm xl:text-body-sm"><strong>7'Mates.fr</strong></span>
       <% end %>
 
       <% categories = taxonomies.first %>
@@ -52,14 +52,14 @@
             root_taxon: categories.root,
             current_taxon: taxon,
             max_level: 1,
-            item_classes: 'font-sans-md',
+            item_classes: 'bebas-neue-regular',
             current_item_classes: 'text-solidus-red',
             )) if categories %>
         <% end %>
       </nav>
     </div>
     <%= render 'layouts/top_bar', taxons: taxons, taxon: taxon %>
-    <a class="ml-6"href="/">Contactez nous !</a>
+    <a class="ml-6 bebas-neue-regular"href="/">Contactez nous !</a>
 
   </div>
 </header>
