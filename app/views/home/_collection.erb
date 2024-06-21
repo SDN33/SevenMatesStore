@@ -1,24 +1,26 @@
-<% if products.length > 0 %>
-  <section class="wrapper mb-12">
-    <div class="flex items-center justify-between mb-7">
-      <h3 class="text-h2 text-center bebas-neue-regular md:text-h3"><%= title %></h3>
-      <%= render "shared/call_to_action", { label: "Voir plus", type: 'secondary', url: products_path } %>
-    </div>
+<div class="col-span-full border-b-[1px] border-t-black dark:border-t-white mb-6">
+  <% if products.length > 0 %>
+    <section class="wrapper mb-12">
+      <div class="flex items-center justify-between mb-7">
+        <h3 class="text-h2 text-center bebas-neue-regular md:text-h3"><%= title %></h3>
+        <%= render "shared/call_to_action", { label: "Voir plus", type: 'secondary', url: products_path } %>
+      </div>
 
-    <% mobile_classes = 'grid grid-cols-2 gap-4' %>
-    <% desktop_classes = 'md:gap-0 md:flex md:snap-x md:justify-between md:snap-mandatory md:overflow-x-auto md:space-x-6' %>
+      <% mobile_classes = 'grid grid-cols-2 gap-4' %>
+      <% desktop_classes = 'md:gap-0 md:flex md:snap-x md:justify-between md:snap-mandatory md:overflow-x-auto md:space-x-6' %>
 
-    <ul class="<%= mobile_classes %> <%= desktop_classes %> no-scrollbar">
-      <% products.each do |product| %>
-        <%= cache [I18n.locale, current_pricing_options, @taxon, product] do %>
-          <%= render ProductCardComponent.new(
-            product,
-            price: product.price_for_options(current_pricing_options),
-            additional_classes: 'snap-start shrink-0 md:w-collection-card h-min-content',
-            home_collection: true
-          ) %>
+      <ul class="<%= mobile_classes %> <%= desktop_classes %> no-scrollbar">
+        <% products.each do |product| %>
+          <%= cache [I18n.locale, current_pricing_options, @taxon, product] do %>
+            <%= render ProductCardComponent.new(
+              product,
+              price: product.price_for_options(current_pricing_options),
+              additional_classes: 'snap-start shrink-0 md:w-collection-card h-min-content',
+              home_collection: true
+            ) %>
+          <% end %>
         <% end %>
-      <% end %>
-    </ul>
-  </section>
-<% end %>
+      </ul>
+    </section>
+  <% end %>
+</div>
