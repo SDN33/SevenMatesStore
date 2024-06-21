@@ -57,11 +57,27 @@ class BreadcrumbsComponent < ViewComponent::Base
 
     @crumbs = [
       { name: t('Accueil'), url: helpers.root_path },
-      { name: t('Panier'), url: helpers.products_path }
-      
+      { name: t('Produits'), url: helpers.products_path },
+      { name: t('Compte'), url: helpers.account_path },
+      { name: t('Panier'), url: helpers.cart_path }
     ]
 
-    if(taxon)
+    # Supprimer "Produits" si on est sur la page du compte, du panier ou d'un taxon
+    if current_page?(helpers.account_path) || current_page?(helpers.cart_path) || taxon
+      @crumbs.reject! { |crumb| crumb[:name] == t('Produits') }
+    end
+
+    # Supprimer "Compte" si on est sur la page des produits, du panier ou d'un taxon
+    if current_page?(helpers.products_path) || current_page?(helpers.cart_path) || taxon
+      @crumbs.reject! { |crumb| crumb[:name] == t('Compte') }
+    end
+
+    # Supprimer "Panier" si on est sur la page des produits, du compte ou d'un taxon
+    if current_page?(helpers.products_path) || current_page?(helpers.account_path) || taxon
+      @crumbs.reject! { |crumb| crumb[:name] == t('Panier') }
+    end
+
+    if taxon
       @crumbs += taxon.ancestors.map do |ancestor|
         { name: ancestor.name, url: helpers.nested_taxons_path(ancestor.permalink) }
       end
