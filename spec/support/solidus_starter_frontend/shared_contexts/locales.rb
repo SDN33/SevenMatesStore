@@ -2,7 +2,7 @@
 
 RSpec.shared_context 'fr locale' do
   before do
-    I18n.backend.store_translations(:fr, spree: {
+    I18n.backend.store_translations(:en, spree: {
       i18n: { this_file_language: "Français" },
       cart: 'Panier',
       shopping_cart: 'Panier',
@@ -68,9 +68,10 @@ RSpec.shared_context 'fr locale' do
       additional_tax_total: 'Total des taxes supplémentaires',
       under: 'en dessous de',
       over: 'au-dessus de',
+      name_on_card: 'Nom sur la carte',
 
     })
-    I18n.locale = :fr # assurez-vous que la locale est définie sur :fr
+    I18n.locale = :en # assurez-vous que la locale est définie sur :fr
   end
 
   after do

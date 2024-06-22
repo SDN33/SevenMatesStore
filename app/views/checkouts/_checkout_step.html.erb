@@ -2,7 +2,7 @@
   <% if order.state == "address" || !order.email? %>
     <div class="text-input mb-6">
       <%= form.label :email, 'Customer email' %>
-      <%= form.email_field :email, required: true, placeholder: 'name@example.com' %>
+      <%= form.email_field :email, required: true, placeholder: 'nom@example.com' %>
     </div>
   <% end %>
 

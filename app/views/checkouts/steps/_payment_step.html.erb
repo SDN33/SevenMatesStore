@@ -10,7 +10,7 @@
       <%= t('spree.payment_information') %>
     </legend>
     <% if @order.covered_by_store_credit? %>
-      <p>Your order is fully covered by store credits, no additional payment method is required.</p>
+      <p>Votre crédit en magasin couvre le montant total de votre commande.</p>
     <% else %>
       <ul class="payment-step__selector my-6">
         <% @wallet_payment_sources&.each do |wallet_payment_source| %>

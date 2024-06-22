@@ -3,7 +3,7 @@
 
   <div class="text-input">
     <% "name_on_card_#{payment_method.id}".tap do |id| %>
-      <%= label_tag id, "#{t('nom sur la carte')}:" %>
+      <%= label_tag id, "Nom sur la carte:" %>
 
       <%= text_field_tag "#{param_prefix}[nom]",
         @order.billing_name,
@@ -15,7 +15,7 @@
 
   <div class="text-input">
     <% "card_number_#{payment_method.id}".tap do |id| %>
-      <%= label_tag id, "#{t('numéro de carte')}:" %>
+      <%= label_tag id, "Numéro de carte:" %>
 
       <%= text_field_tag "#{param_prefix}[numéro]",
         nil,
@@ -41,7 +41,7 @@
 
     <div class="text-input w-full">
       <% "card_code_#{payment_method.id}".tap do |id| %>
-        <%= label_tag id, "#{t('spree.card_code')}:" %>
+        <%= label_tag id, "Code de sécurité:" %>
 
         <%= text_field_tag "#{param_prefix}[verification_value]",
           nil,

@@ -63,7 +63,7 @@ class CheckoutsController < CheckoutBaseController
 
   def set_successful_flash_notice
     flash.notice = t('Votre commande a été passée avec succès')
-    flash['order_completed'] = true
+    flash['Commande_réalisée_avec_succès'] = true
   end
 
   def send_to_next_state

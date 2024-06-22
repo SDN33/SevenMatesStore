@@ -94,3 +94,7 @@ en:
   proceed_to_order: "Passer la commande"
   proceed_to_order_summary: "Passer au résumé de la commande"
   shipping_instructions: "Instructions d'expédition"
+  shipping_method: "Méthode d'expédition"
+  logged_in_succesfully: "Connecté avec succès"
+  complete: "Terminé"
+  signed_out_succesfully: "Déconnecté avec succès"
