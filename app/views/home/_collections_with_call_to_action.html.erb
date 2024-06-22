@@ -1,7 +1,11 @@
 <section class="flex flex-col lg:flex-row items-center justify-center gap-7 wrapper py-4 lg:py-12 matesclub">
   <div class="flex flex-col items-center justify-center py-10 px-3">
+    <img src="<%= image_path('user.svg') %>" alt="user" class="w-full mb-4" id="user">
     <h3 class="text-h2 text-center bebas-neue-regular mb-1">Rejoins<br>le MATES CLUB</h3>
-    <img src="<%= image_path('user.svg') %>" alt="user" class="w-full mb-6" id="user">
+    <p class="text-body-sm text-center bebas-neue-regular">Reçois des offres exclusives et des conseils personnalisés</p>
+    <br>
     <%= render "shared/call_to_action", { label: "Inscris toi", url: '/account', target: '_self' } %>
+    <br><br><%= render "shared/social_icons" %>
+
   </div>
 </section>
