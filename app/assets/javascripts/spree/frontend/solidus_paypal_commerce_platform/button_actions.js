@@ -235,7 +235,7 @@ SolidusPaypalCommercePlatform.addPayment = async function(paypal_amount, payment
 
   if (!response.ok) {
     SolidusPaypalCommercePlatform.hideOverlay()
-    alert('There were some problems with your payment');
+    alert('Il y a eu un problème avec votre paiement');
   }
 }
 

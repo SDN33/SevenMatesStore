@@ -11,12 +11,14 @@
     <!-- Preload script and stylesheet -->
     <link rel="preload" href="<%= asset_path('solidus_starter_frontend.js') %>" as="script">
     <link rel="preload" href="<%= asset_path('solidus_starter_frontend.css') %>" as="style">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
     <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag 'solidus_starter_frontend', media: 'screen', "data-turbo-track": "reload" %>
 
     <%= javascript_include_tag 'solidus_starter_frontend', "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
 
     <%= favicon_link_tag 'logopetit', rel: 'icon', type: 'image/ico' %>
 

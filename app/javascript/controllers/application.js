@@ -10,6 +10,7 @@ window.Stimulus   = application
 
 export { application }
 
+// Pop-up de consentement aux cookies
 document.addEventListener('DOMContentLoaded', function () {
   if (!getCookie('cookiesAccepted') && !getCookie('cookiesRejected')) {
     document.getElementById('cookie-popup').style.display = 'block';
@@ -70,3 +71,4 @@ document.addEventListener('DOMContentLoaded', function () {
     document.cookie = '_gat=; Max-Age=-99999999;';
   }
 });
+

@@ -187,3 +187,7 @@ h3, h4 {
 .cookie-popup .btn {
   margin-top: 10px;
 }
+
+.logo {
+  width: 10px; /* Ajustez cette valeur si nécessaire */
+}
