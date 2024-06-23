@@ -31,7 +31,7 @@ html, body {
   }
 
   .button-primary {
-    @apply w-fit py-3 px-7 rounded-full text-body-sm font-sans-md tracking-wider leading-none uppercase whitespace-nowrap transition-colors duration-200 bg-red-500 text-white hover:bg-red-700;
+    @apply w-fit py-3 px-7 rounded-full text-body-sm font-sans-md tracking-wider leading-none uppercase whitespace-nowrap transition-colors duration-200 bg-gray-500 text-white hover:bg-red-500;
   }
 
   .categories-menu ul {
@@ -193,4 +193,3 @@ html, body {
 .swiper-button-prev:hover {
   background-color: #f0f0f0; /* Slightly darker background on hover */
 }
-
