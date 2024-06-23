@@ -18,6 +18,7 @@
         <span class="camelcase bebas-neue-regular font-semibold mb-0 dark:text-sand text-body lg:text-body-sm xl:text-body-sm"><strong>7'Mates.fr</strong></span>
       <% end %>
 
+
       <% categories = taxonomies.first %>
       <% navMobileClasses = '
         categories-menu bg-white
@@ -33,6 +34,8 @@
         dark:lg:text-sand
         lg:p-0'
       %>
+
+
 
 
       <nav class="<%= navMobileClasses + navDesktopClasses %> text-" data-drawer-target="drawer">
@@ -56,6 +59,8 @@
             current_item_classes: 'text-solidus-red',
             )) if categories %>
         <% end %>
+        <a class="ml-6 bebas-neue-regular"href="/">personnalisation / Sublimation</a>
+
       </nav>
     </div>
     <%= render 'layouts/top_bar', taxons: taxons, taxon: taxon %>
