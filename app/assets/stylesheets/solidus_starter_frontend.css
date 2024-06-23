@@ -166,3 +166,24 @@ h3, h4 {
   font-weight: 400;
   font-style: normal;
 }
+
+.cookie-popup {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  opacity: 0.9;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  z-index: 1000;
+  display: none; /* Hide by default */
+}
+
+.cookie-popup p {
+  margin: 0;
+}
+
+.cookie-popup .btn {
+  margin-top: 10px;
+}
