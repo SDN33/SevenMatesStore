@@ -7,11 +7,21 @@ export default class extends Controller {
   }
 
   async updateCartLink() {
-    const response = await fetch(this.cartUrlValue)
-    this.cartLinkTarget.innerHTML = await response.text()
+    console.log('Fetching cart URL:', this.cartUrlValue); // Vérification de l'URL
+
+    try {
+      const response = await fetch(this.cartUrlValue);
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.statusText}`);
+      }
+      this.cartLinkTarget.innerHTML = await response.text();
+    } catch (error) {
+      console.error('There was a problem with the fetch operation:', error);
+      this.cartLinkTarget.innerHTML = '<p>Failed to load cart. Please try again later.</p>';
+    }
   }
 
   connect() {
-    this.updateCartLink()
+    this.updateCartLink();
   }
 }

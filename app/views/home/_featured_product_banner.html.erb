@@ -1,9 +1,26 @@
+
+<head>
+  <style>
+    /* CSS pour uniformiser la taille des logos */
+    .logo-img {
+      width: 150px; /* ou toute autre dimension appropriée */
+      height: 100px; /* ou toute autre dimension appropriée */
+      object-fit: contain; /* Permet de conserver les proportions de l'image */
+    }
+
+    .swiper-container-logos {
+      width: 100%;
+      height: 250px; /* Ajustez cette valeur selon vos besoins */
+    }
+  </style>
+</head>
+
 <body>
   <section class="wrapper mb-12">
     <div class="flex items-center justify-between mb-7">
       <h3 class="text-h2 text-center bebas-neue-regular md:text-h3">Ils nous ont fait confiance...</h3>
     </div>
-    <div class="swiper-container">
+    <div class="swiper-container-logos">
       <div class="swiper-wrapper">
         <!-- Répétez ce bloc pour chaque logo -->
         <div class="swiper-slide">
@@ -12,6 +29,14 @@
               <img src="https://www.girondins.com/img/logo/Girondins_Bordeaux_Logo.png" alt="Girondins de Bordeaux" class="logo-img">
             </a>
             <p><strong>Girondins de Bordeaux</strong><br>Club Football</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <a href="https://www.newlogoexample.com/">
+              <img src="https://www.newlogoexample.com/logo.png" alt="New Logo" class="logo-img">
+            </a>
+            <p><strong>New Logo</strong><br>Nouvelle Entreprise</p>
           </div>
         </div>
         <div class="swiper-slide">
@@ -31,6 +56,32 @@
           </div>
         </div>
       </div>
-    
+      <!-- Add Pagination -->
+      <div class="swiper-pagination-logos"></div>
+      <!-- Add Navigation -->
+      <div class="swiper-button-next-logos"></div>
+      <div class="swiper-button-prev-logos"></div>
     </div>
   </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var swiperLogos = new Swiper('.swiper-container-logos', {
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination-logos',
+          clickable: true,
+          spaceBetween: 10,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next-logos',
+          prevEl: '.swiper-button-prev-logos',
+        },
+        autoplay: {
+          delay: 5000, // 5 seconds
+          disableOnInteraction: false,
+        },
+      });
+    });
+  </script>
+</body>

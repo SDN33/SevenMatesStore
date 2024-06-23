@@ -59,32 +59,41 @@ class BreadcrumbsComponent < ViewComponent::Base
       { name: t('Accueil'), url: helpers.root_path },
       { name: t('Produits'), url: helpers.products_path },
       { name: t('Compte'), url: helpers.account_path },
-      { name: t('Panier'), url: helpers.cart_path }
+      { name: t('Panier'), url: helpers.cart_path },
+      { name: t('Se connecter'), url: helpers.login_path }
     ]
 
-    # Supprimer "Produits" si on est sur la page du compte, du panier ou d'un taxon
-    if current_page?(helpers.account_path) || current_page?(helpers.cart_path) || taxon
-      @crumbs.reject! { |crumb| crumb[:name] == t('Produits') }
-    end
-
-    # Supprimer "Compte" si on est sur la page des produits, du panier ou d'un taxon
-    if current_page?(helpers.products_path) || current_page?(helpers.cart_path) || taxon
-      @crumbs.reject! { |crumb| crumb[:name] == t('Compte') }
-    end
-
-    # Supprimer "Panier" si on est sur la page des produits, du compte ou d'un taxon
-    if current_page?(helpers.products_path) || current_page?(helpers.account_path) || taxon
-      @crumbs.reject! { |crumb| crumb[:name] == t('Panier') }
-    end
+    filter_crumbs!
 
     if taxon
       @crumbs += taxon.ancestors.map do |ancestor|
         { name: ancestor.name, url: helpers.nested_taxons_path(ancestor.permalink) }
       end
-
       @crumbs << { name: taxon.name, url: helpers.nested_taxons_path(taxon.permalink) }
     end
 
     @crumbs
+  end
+
+  def filter_crumbs!
+    pages_to_exclude = []
+
+    if current_page?(helpers.account_path) || current_page?(helpers.cart_path) || taxon
+      pages_to_exclude << t('Produits')
+    end
+
+    if current_page?(helpers.products_path) || current_page?(helpers.cart_path) || taxon
+      pages_to_exclude << t('Compte')
+    end
+
+    if current_page?(helpers.products_path) || current_page?(helpers.account_path) || taxon
+      pages_to_exclude << t('Panier')
+    end
+
+    if taxon || current_page?(helpers.account_path) || current_page?(helpers.cart_path) || current_page?(helpers.products_path)
+      pages_to_exclude << t('Se connecter')
+    end
+
+    @crumbs.reject! { |crumb| pages_to_exclude.include?(crumb[:name]) }
   end
 end
