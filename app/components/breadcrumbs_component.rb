@@ -119,9 +119,6 @@ class BreadcrumbsComponent < ViewComponent::Base
     if current_page?(helpers.checkout_complete_path)
       pages_to_exclude = @crumbs.map { |crumb| crumb[:name] } - [t('Checkout')]
     end
-    if current_page?(helpers.product_path)
-      pages_to_exclude = @crumbs.map { |crumb| crumb[:name] } - [t('Produits')]
-    end
 
     @crumbs.reject! { |crumb| pages_to_exclude.include?(crumb[:name]) }
   end

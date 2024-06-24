@@ -1,5 +1,3 @@
-# config/routes.rb
-
 Rails.application.routes.draw do
   mount SolidusAdmin::Engine, at: '/admin', constraints: ->(req) {
     req.cookies['solidus_admin'] != 'false' &&
@@ -10,12 +8,13 @@ Rails.application.routes.draw do
 
   mount Spree::Core::Engine, at: '/'
 
-  # Add the route for checkout/address
+  # Add unique route names to avoid conflicts
   get '/checkout/address', to: 'checkout#address', as: 'checkout_address'
   get '/checkout/delivery', to: 'checkout#delivery', as: 'checkout_delivery'
   get '/checkout/payment', to: 'checkout#payment', as: 'checkout_payment'
   get '/checkout/confirm', to: 'checkout#confirm', as: 'checkout_confirm'
   get '/checkout/complete', to: 'checkout#complete', as: 'checkout_complete'
+  get '/list-products', to: 'products#index', as: 'list_products' # Example: Renamed to 'list_products'
 
   # Other routes...
 end
