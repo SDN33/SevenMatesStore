@@ -69,6 +69,10 @@ RSpec.shared_context 'fr locale' do
       under: 'en dessous de',
       over: 'au-dessus de',
       name_on_card: 'Nom sur la carte',
+      credit_card_number: 'Numéro de carte de crédit',
+      check: 'Chèque',
+      credit_card: 'Carte de crédit',
+      included_in_price: 'Inclus dans le prix',
 
     })
     I18n.locale = :en # assurez-vous que la locale est définie sur :fr

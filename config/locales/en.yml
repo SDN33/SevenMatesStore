@@ -98,3 +98,23 @@ en:
   logged_in_succesfully: "Connecté avec succès"
   complete: "Terminé"
   signed_out_succesfully: "Déconnecté avec succès"
+  informations_de_paiement: "Informations de paiement"
+
+  activerecord:
+    models:
+      spree_credit_card: "Carte de crédit"
+    attributes:
+      spree_credit_card:
+        month: "Mois"
+        year: "Année"
+        cc_type: "Type de carte"
+        last_digits: "Derniers chiffres"
+        gateway_customer_profile_id: "ID du profil client de la passerelle"
+        gateway_payment_profile_id: "ID du profil de paiement de la passerelle"
+        created_at: "Créé à"
+        updated_at: "Mis à jour à"
+        name: "Nom"
+        user_id: "ID de l'utilisateur"
+        payment_method_id: "ID de la méthode de paiement"
+        default: "Par défaut"
+        address_id: "ID de l'adresse"

@@ -13,6 +13,11 @@
  * OFF require_tree .
  *= require_self
  */
+ /*
+ *= require tailwind
+ *= require_tree .
+ */
+
  @tailwind base;
  @tailwind components;
  @tailwind utilities;

@@ -39,7 +39,7 @@ class UserSessionsController < Devise::SessionsController
   private
 
   def accurate_title
-    I18n.t('login')
+    I18n.t('se connecter')
   end
 
   def redirect_back_or_default(default)

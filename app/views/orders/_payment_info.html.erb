@@ -1,7 +1,7 @@
 <div class="payment-info">
   <div class="flex items-center gap-x-3 mb-6">
     <h3 class="order-shipments__title font-sans-md text-body lg:text-body-md">
-      <%= t('Informations de paiement') %>
+      <%= t('informations_de_paiement') %>
     </h3>
 
     <%= link_to(
@@ -11,12 +11,12 @@
     ) unless @order.completed? %>
   </div>
 
-  <% order.payments.valid.each do |payment| %>
+  <% @order.payments.valid.each do |payment| %>
     <ul class="payment-info__info flex flex-col gap-y-2">
       <li>
         <%= render partial_name_with_fallback(
           'orders/payment_info',
-          payment.payment_method.partial_name,
+          translated_payment_method_name(payment.payment_method.partial_name),
           'default'
         ), payment: payment %>
       </li>

@@ -60,7 +60,6 @@ class BreadcrumbsComponent < ViewComponent::Base
       { name: t('Produits'), url: helpers.products_path },
       { name: t('Compte'), url: helpers.account_path },
       { name: t('Panier'), url: helpers.cart_path },
-      { name: t('Se connecter'), url: helpers.login_path },
       { name: t('Checkout'), url: helpers.checkout_path }
     ]
 

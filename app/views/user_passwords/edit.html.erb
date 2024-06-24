@@ -25,7 +25,7 @@
       <%= f.hidden_field :reset_password_token %>
 
       <div class="mt-12 text-center">
-        <%= I18n.t("spree.or") %> <%= link_to I18n.t("Créer un compte"), signup_path, class:"transition-all duration-300 text-black hover:!text-red-500 dark:text-sand underline" %>
+        <%= I18n.t("spree.or") %> <%= link_to ("Créer un compte").capitalize, signup_path, class:"transition-all duration-300 text-black hover:!text-red-500 dark:text-sand underline" %>
       </div>
 
     <% end %>

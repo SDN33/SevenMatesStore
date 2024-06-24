@@ -1,6 +1,6 @@
 <article class="wrapper grid-container py-12" id="new-customer">
   <div class="col-span-full md:col-start-5 md:col-span-4">
-    <h1 class="font-serif text-h4 md:text-h3 text-center"><%= t("Créer un compte") %></h1>
+    <h1 class="font-serif text-h4 md:text-h3 text-center"><%= ("Créer un compte").capitalize %></h1>
 
     <%= render 'shared/error_messages', target: resource %>
 
@@ -21,7 +21,7 @@
       </div>
 
       <div class="text-center flex flex-col gap-6 items-center">
-        <%= f.button t("Créer un compte"),
+        <%= f.button ("Créer un compte").capitalize,
           name: :commit,
           class: 'w-fit py-3 px-7 rounded-full text-body-sm font-bold leading-none uppercase whitespace-nowrap transiton-colors duration-200 bg-red-500 text-white hover:bg-red-700'
         %>
