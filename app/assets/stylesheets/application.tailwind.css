@@ -9,7 +9,7 @@ html, body {
 @layer base {
   html,
   body {
-    @apply box-border max-w-full antialiased scroll-smooth bg-sand;
+    @apply box-border max-w-full antialiased scroll-smooth;
     @apply dark:bg-black dark:text-sand;
   }
 }
@@ -86,12 +86,7 @@ html, body {
   }
 
   /* Theme switcher component */
-  .theme-switcher {
-    @apply relative flex items-center w-14 h-7 py-0.5 px-2 rounded-full border border-black bg-black;
-    @apply after:bg-sand after:content-[''] after:rounded-full after:h-[22px] after:w-[22px] after:transition-all after:translate-x-[120%];
-    @apply dark:bg-sand;
-    @apply peer-focus:outline-none;
-  }
+
 
   /* Flash Messages */
   .flash {

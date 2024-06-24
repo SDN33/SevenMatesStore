@@ -60,7 +60,8 @@ class BreadcrumbsComponent < ViewComponent::Base
       { name: t('Produits'), url: helpers.products_path },
       { name: t('Compte'), url: helpers.account_path },
       { name: t('Panier'), url: helpers.cart_path },
-      { name: t('Se connecter'), url: helpers.login_path }
+      { name: t('Se connecter'), url: helpers.login_path },
+      { name: t('Checkout'), url: helpers.checkout_path }
     ]
 
     filter_crumbs!
@@ -78,20 +79,45 @@ class BreadcrumbsComponent < ViewComponent::Base
   def filter_crumbs!
     pages_to_exclude = []
 
-    if current_page?(helpers.account_path) || current_page?(helpers.cart_path) || taxon
+    if current_page?(helpers.account_path) || current_page?(helpers.cart_path) || current_page?(helpers.checkout_path) || taxon
       pages_to_exclude << t('Produits')
     end
 
-    if current_page?(helpers.products_path) || current_page?(helpers.cart_path) || taxon
+    if current_page?(helpers.products_path) || current_page?(helpers.cart_path) || current_page?(helpers.checkout_path) || taxon
       pages_to_exclude << t('Compte')
     end
 
-    if current_page?(helpers.products_path) || current_page?(helpers.account_path) || taxon
+    if current_page?(helpers.products_path) || current_page?(helpers.account_path) || current_page?(helpers.checkout_path) || taxon
       pages_to_exclude << t('Panier')
     end
 
-    if taxon || current_page?(helpers.account_path) || current_page?(helpers.cart_path) || current_page?(helpers.products_path)
+    if current_page?(helpers.products_path) || current_page?(helpers.account_path) || current_page?(helpers.cart_path) || taxon
+      pages_to_exclude << t('Checkout')
+    end
+
+    if taxon || current_page?(helpers.account_path) || current_page?(helpers.cart_path) || current_page?(helpers.products_path) || current_page?(helpers.checkout_path)
       pages_to_exclude << t('Se connecter')
+    end
+
+    # Specific exclusion for /checkout/address path
+    if current_page?(helpers.checkout_address_path)
+      pages_to_exclude = @crumbs.map { |crumb| crumb[:name] } - [t('Checkout')]
+    end
+
+    if current_page?(helpers.checkout_delivery_path)
+      pages_to_exclude = @crumbs.map { |crumb| crumb[:name] } - [t('Checkout')]
+    end
+
+    if current_page?(helpers.checkout_payment_path)
+      pages_to_exclude = @crumbs.map { |crumb| crumb[:name] } - [t('Checkout')]
+    end
+
+    if current_page?(helpers.checkout_confirm_path)
+      pages_to_exclude = @crumbs.map { |crumb| crumb[:name] } - [t('Checkout')]
+    end
+
+    if current_page?(helpers.checkout_complete_path)
+      pages_to_exclude = @crumbs.map { |crumb| crumb[:name] } - [t('Checkout')]
     end
 
     @crumbs.reject! { |crumb| pages_to_exclude.include?(crumb[:name]) }

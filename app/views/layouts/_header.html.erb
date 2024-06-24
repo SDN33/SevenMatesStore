@@ -4,10 +4,10 @@
     <div class="flex items-center justify-center w-8 h-8 lg:py-2 lg:hidden">
       <button type="button" class="inline-flex flex-col gap-y-2 items-center p-2 w-10 h-10 justify-center rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500" aria-controls="navbar-default" aria-expanded="false" data-action="click->drawer#toggle">
         <span class="sr-only">Ouvrir menu</span>
-        <svg class="bg-black dark:bg-sand" xmlns="http://www.w3.org/2000/svg" width="26" height="2" viewBox="0 0 26 2" fill="currentColor">
+        <svg class="bg-black " xmlns="http://www.w3.org/2000/svg" width="26" height="2" viewBox="0 0 26 2" fill="currentColor">
           <line y1="1" x2="26" y2="1" stroke-width="2"/>
         </svg>
-        <svg class="bg-black dark:bg-sand" xmlns="http://www.w3.org/2000/svg" width="26" height="2" viewBox="0 0 26 2" fill="currentColor">
+        <svg class="bg-black" xmlns="http://www.w3.org/2000/svg" width="26" height="2" viewBox="0 0 26 2" fill="currentColor">
           <line y1="1" x2="26" y2="1" stroke-width="2"/>
         </svg>
       </button>
@@ -15,7 +15,7 @@
     <div class="flex items-center gap-x-4 xl:gap-x-8 w-full justify-center lg:justify-start">
       <%= link_to root_path, class: 'absolute lg:relative left-1/2 lg:left-0 lg:-translate-x-0 -translate-x-1/2 flex items-center space-x-3' do %>
         <%= image_tag "logo.png", class: "w-12" %>
-        <span class="camelcase bebas-neue-regular font-semibold mb-0 dark:text-sand text-body lg:text-body-sm xl:text-body-sm"><strong>7'Mates.fr</strong></span>
+        <span class="camelcase bebas-neue-regular font-semibold mb-0 dark:text-sand text-body lg:text-body-sm xl:text-body-sm"><strong>SevenMates.fr</strong></span>
       <% end %>
 
 
@@ -25,7 +25,7 @@
         fixed top-0 left-0 z-40 w-[80%] max-w-[400px] min-w-[270px] h-full
         transition-transform duration-300 ease-in-out -translate-x-full
         flex flex-col
-        lg:bg-sand dark:bg-black dark:text-white text-black dark:lg:text-sand
+        lg:dark:bg-black dark:text-white text-black dark:lg:text-sand
         px-8 py-5 text-body-sm'
       %>
       <% navDesktopClasses = '
