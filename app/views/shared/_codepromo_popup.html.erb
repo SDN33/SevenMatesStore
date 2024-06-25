@@ -1,0 +1,12 @@
+<body data-user-signed-in="<%= @user_signed_in %>">
+
+  <div id="codepromo-popup" class="codepromo-popup hidden">
+    <div class="codepromo-popup-content">
+      <span id="codepromo-popup-close" class="codepromo-popup-close">&times;</span>
+      <h2 class="bebas-neue-regular">Inscrivez-vous à notre Newsletter</h2>
+      <p class="mb-5
+       ">Obtenez 10% avec le code: <strong>NEW-MATES-10</strong></p>
+      <%= render "shared/call_to_action", { label: "Inscris toi", url: '/account', target: '_self' } %>
+    </div>
+  </div>
+</body>

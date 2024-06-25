@@ -5,6 +5,8 @@ class HomeController < StoreController
   respond_to :html
 
   def index
+    @user_signed_in = spree_current_user.present?
+
     @searcher = build_searcher(params.merge(include_images: true))
     @products = @searcher.retrieve_products
 
