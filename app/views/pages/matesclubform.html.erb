@@ -11,17 +11,19 @@
       <%= form_with url: ENV['FORMSPREE_URL'], method: :post, local: true, html: { class: "space-y-6" } do %>
         <div class="text-input">
           <%= label_tag :email, "Votre email :" %>
-          <%= email_field_tag :email, nil, class: "text-input", pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$", title: "Veuillez entrer une adresse email valide." %>
+          <%= email_field_tag :email, nil, class: "text-input", pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$", title: "Veuillez entrer une adresse email valide.", placeholder: "mon.email@gmail.com" %>
         </div>
 
         <div class="text-input">
           <%= label_tag :organisation, "Votre organisation :" %>
-          <%= text_field_tag :organisation, nil, class: "text-input" %>
+          <%= text_field_tag :organisation, nil, class: "text-input", placeholder: "Apple" %>
         </div>
+
+        <%= hidden_field_tag :subject, "Mates Club" %>
 
         <div class="text-input">
           <%= label_tag :quantity, "Nombre de lot souhaité :" %>
-          <%= number_field_tag :quantity, nil, class: "text-input" %>
+          <%= number_field_tag :quantity, nil, class: "text-input", placeholder: "100" %>
         </div>
 
         <div class="text-input">
