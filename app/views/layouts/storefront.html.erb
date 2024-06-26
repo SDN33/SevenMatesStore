@@ -34,16 +34,7 @@
     <div class="min-h-screen grid grid-rows-[auto_1fr_auto]">
       <%= render 'layouts/header', taxons: @taxons, taxon: @taxon %>
       <main>
-        <%= render BreadcrumbsComponent.new(
-          taxon: @taxon,
-          item_classes: 'text-body-xs text-gray-500',
-          separator_classes: 'text-body-xs text-gray-500 ml-2',
-          container_classes: 'flex gap-2',
-          wrapper_classes: 'wrapper mt-4'
-        ) %>
-        <% if flash_messages.present? %>
-          <%= flash_messages %>
-        <% end %>
+        
         <%= yield %>
       </main>
       <%= render 'layouts/footer' %>

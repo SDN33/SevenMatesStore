@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get '/checkout/confirm', to: 'checkout#confirm', as: 'checkout_confirm'
   get '/checkout/complete', to: 'checkout#complete', as: 'checkout_complete'
   get '/list-products', to: 'products#index', as: 'list_products' # Example: Renamed to 'list_products'
+  get '/pages/_matesclubform', to: 'pages#matesclubform', as: 'matesclubform_page'
+  
 
   # Other routes...
 end
