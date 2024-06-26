@@ -2,5 +2,7 @@
 class PagesController < StoreController
 
   def matesclubform
+    @products = Spree::Product.all
+
   end
 end

@@ -1,0 +1,69 @@
+<div class="wrapper grid-container py-12 space-y-10 md:space-y-14">
+  <div class="col-span-full space-y-4">
+    <h1 class="bebas-neue-regular text-h4 md:text-h3">♙Contact Mates Club</h1>
+  </div>
+
+  <div class="col-span-full grid-container">
+    <div class="col-span-full md:col-span-10 md:col-start-3" id="edit-account">
+      <h3 class="font-serif text-h6 md:text-h6 mb-6">Remplissez le formulaire ci-dessous</h3>
+      <p>Vous souhaitez commander des lots de produits Mates Club ?<br>Remplissez le formulaire ci-dessous et nous vous recontacterons dans les plus brefs délais.</p>
+
+      <%= form_with url: ENV['FORMSPREE_URL'], method: :post, local: true, html: { class: "space-y-6" } do %>
+        <div class="text-input">
+          <%= label_tag :email, "Votre email :" %>
+          <%= email_field_tag :email, nil, class: "text-input", pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$", title: "Veuillez entrer une adresse email valide." %>
+        </div>
+
+        <div class="text-input">
+          <%= label_tag :organisation, "Votre organisation :" %>
+          <%= text_field_tag :organisation, nil, class: "text-input" %>
+        </div>
+
+        <div class="text-input">
+          <%= label_tag :quantity, "Nombre de lot souhaité :" %>
+          <%= number_field_tag :quantity, nil, class: "text-input" %>
+        </div>
+
+        <div class="text-input">
+          <%= label_tag :reference, "Référence du lot souhaité :" %>
+          <div class="text-input">
+            <%= select_tag :reference, options_from_collection_for_select(@products, :id, :name), include_blank: 'Sélectionnez un produit' %>
+          </div>
+          <div class="product-images">
+            <% @products.each do |product| %>
+              <div class="product-image" id="product-<%= product.id %>" style="display: none;">
+                <%= image_tag product.images.first.attachment.url(:small) if product.images.any? %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="text-input">
+          <%= label_tag :message, "Votre message :" %>
+          <%= text_area_tag :message, nil, rows: 2, class: "text-input" %>
+        </div>
+
+        <div class="mt-4">
+          <%= submit_tag "Envoyer", class: 'w-fit py-3 px-7 rounded-full text-body-sm font-bold leading-none uppercase whitespace-nowrap transition-colors duration-200 bg-red-500 text-white hover:bg-red-700' %>
+        </div>
+      <% end %>
+
+      <div class="grid grid-container"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const referenceSelect = document.getElementById('reference');
+    referenceSelect.addEventListener('change', function() {
+      document.querySelectorAll('.product-image').forEach(function(image) {
+        image.style.display = 'none';
+      });
+      const selectedProduct = document.getElementById('product-' + referenceSelect.value);
+      if (selectedProduct) {
+        selectedProduct.style.display = 'block';
+      }
+    });
+  });
+</script>
