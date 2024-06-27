@@ -126,3 +126,25 @@ document.addEventListener('DOMContentLoaded', function() {
     return null;
   }
 });
+
+
+
+
+// animation de la barre de navigation  au scroll
+
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.getElementById('main-header');
+  let lastScrollTop = 0;
+
+  window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+      // Scroll down
+      header.classList.add('scrolled');
+    } else {
+      // Scroll up
+      header.classList.remove('scrolled');
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+  });
+});

@@ -46,7 +46,7 @@
           spree_current_user.respond_to?(:persist_order_address),
           id: 'save-user-address'
         ) %>
-        <%= t("enregistrer_cette_adresse") %>
+        <%= ("enregistrer cette adresse").capitalize %>
       <% end %>
     <% end %>
 
