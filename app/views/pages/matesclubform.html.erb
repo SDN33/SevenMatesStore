@@ -1,6 +1,6 @@
 <div class="wrapper grid-container py-12 space-y-10 md:space-y-14">
   <div class="col-span-full space-y-4">
-    <h1 class="bebas-neue-regular text-h4 md:text-h3">♙Contact Mates Club</h1>
+    <h1 class="bebas-neue-regular text-h4 md:text-h3">♙ Contact Mates Club</h1>
   </div>
 
   <div class="col-span-full grid-container">
@@ -29,7 +29,7 @@
         <div class="text-input">
           <%= label_tag :reference, "Référence du lot souhaité :" %>
           <div class="text-input">
-            <%= select_tag :reference, options_from_collection_for_select(@products, :id, :name), include_blank: 'Sélectionnez un produit' %>
+            <%= select_tag :reference, options_from_collection_for_select(@products, :id, :name), include_blank: 'Sélectionnez un produit', id: 'reference' %>
           </div>
           <div class="product-images">
             <% @products.each do |product| %>
@@ -40,9 +40,26 @@
           </div>
         </div>
 
+        <!-- Nouveaux champs de couleur avec prévisualisation -->
+        <div class="text-input">
+          <%= label_tag :couleur1, "Couleur 1 :" %>
+          <div class="color-picker">
+            <input type="color" id="couleur1" name="couleur1" class="color-picker-input">
+            <div class="color-preview" id="couleur1-preview"></div>
+          </div>
+        </div>
+
+        <div class="text-input">
+          <%= label_tag :couleur2, "Couleur 2 :" %>
+          <div class="color-picker">
+            <input type="color" id="couleur2" name="couleur2" class="color-picker-input">
+            <div class="color-preview" id="couleur2-preview"></div>
+          </div>
+        </div>
+
         <div class="text-input">
           <%= label_tag :message, "Votre message :" %>
-          <%= text_area_tag :message, nil, rows: 2, class: "text-input" %>
+          <%= text_area_tag :message, nil, rows: 2, class: "text-input area" %>
         </div>
 
         <div class="mt-4">
@@ -57,6 +74,18 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    const couleur1Input = document.getElementById('couleur1');
+    const couleur1Preview = document.getElementById('couleur1-preview');
+    couleur1Input.addEventListener('input', function() {
+      couleur1Preview.style.backgroundColor = couleur1Input.value;
+    });
+
+    const couleur2Input = document.getElementById('couleur2');
+    const couleur2Preview = document.getElementById('couleur2-preview');
+    couleur2Input.addEventListener('input', function() {
+      couleur2Preview.style.backgroundColor = couleur2Input.value;
+    });
+
     const referenceSelect = document.getElementById('reference');
     referenceSelect.addEventListener('change', function() {
       document.querySelectorAll('.product-image').forEach(function(image) {
@@ -69,3 +98,32 @@
     });
   });
 </script>
+
+<style>
+  .color-picker {
+    display: flex;
+    align-items: center;
+  }
+
+  .color-picker-input {
+    width: 30px; /* Ajustez la taille du sélecteur de couleur */
+    height: 30px;
+    border: none;
+    padding: 0;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .color-preview {
+    width: 30px; /* Ajustez la taille de l'aperçu de la couleur */
+    height: 30px;
+    border-radius: 50%; /* Rendre l'aperçu rond */
+    border: 1px solid #ccc;
+  }
+
+  .text-input {
+    width: 50% !important;
+  }
+
+
+</style>

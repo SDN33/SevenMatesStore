@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   mount SolidusPaypalCommercePlatform::Engine, at: '/solidus_paypal_commerce_platform'
   scope(path: '/') { draw :storefront }
 
-  mount Spree::Core::Engine, at: '/shop' # Changez la racine pour Spree
+  mount Spree::Core::Engine, at: '/' # Changez la racine pour Spree
 
   # Add unique route names to avoid conflicts
   get '/checkout/address', to: 'checkout#address', as: 'checkout_address'

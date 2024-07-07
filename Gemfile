@@ -48,13 +48,15 @@ end
 # PostgreSQL adapter for production
 gem 'pg'
 gem 'dotenv-rails', groups: [:development, :test]
+
 # Solidus e-commerce platform
 gem "solidus", "~> 4.3"
 gem "solidus_auth_devise", "~> 2.5"
 gem "solidus_admin", ">= 0.2"
 gem "solidus_support"
 gem "solidus_paypal_commerce_platform", "~> 1.0"
-
+gem 'solidus_backend'
+gem 'solidus_frontend'
 
 # Other gems
 gem "responders"
@@ -63,7 +65,6 @@ gem "truncate_html"
 gem "view_component", "~> 3.0"
 gem "tailwindcss-rails"
 gem "bootstrap", "~> 4.6.0"
-
 
 group :test do
   gem "capybara"
@@ -83,52 +84,4 @@ group :development, :test do
   gem 'rubocop-performance', '~> 1.5'
   gem 'rubocop-rails', '~> 2.3'
   gem 'rubocop-rspec', '~> 2.0'
-end
-gem "responders"
-gem "canonical-rails"
-gem "solidus_support"
-gem "truncate_html"
-gem "view_component", "~> 3.0"
-gem "tailwindcss-rails"
-
-group :test do
-  gem "capybara-screenshot", "~> 1.0"
-  gem "database_cleaner", "~> 2.0"
-end
-
-group :development, :test do
-  gem "rspec-rails"
-  gem "rails-controller-testing", "~> 1.0.5"
-  gem "rspec-activemodel-mocks", "~> 1.1.0"
-  gem "factory_bot", ">= 4.8"
-  gem "factory_bot_rails"
-  gem "ffaker", "~> 2.13"
-  gem "rubocop", "~> 1.0"
-  gem "rubocop-performance", "~> 1.5"
-  gem "rubocop-rails", "~> 2.3"
-  gem "rubocop-rspec", "~> 2.0"
-end
-gem "responders"
-gem "canonical-rails"
-gem "solidus_support"
-gem "truncate_html"
-gem "view_component", "~> 3.0"
-gem "tailwindcss-rails"
-
-group :test do
-  gem "capybara-screenshot", "~> 1.0"
-  gem "database_cleaner", "~> 2.0"
-end
-
-group :development, :test do
-  gem "rspec-rails"
-  gem "rails-controller-testing", "~> 1.0.5"
-  gem "rspec-activemodel-mocks", "~> 1.1.0"
-  gem "factory_bot", ">= 4.8"
-  gem "factory_bot_rails"
-  gem "ffaker", "~> 2.13"
-  gem "rubocop", "~> 1.0"
-  gem "rubocop-performance", "~> 1.5"
-  gem "rubocop-rails", "~> 2.3"
-  gem "rubocop-rspec", "~> 2.0"
 end
