@@ -55,7 +55,6 @@ gem "solidus_auth_devise", "~> 2.5"
 gem "solidus_admin", ">= 0.2"
 gem "solidus_support"
 gem "solidus_paypal_commerce_platform", "~> 1.0"
-gem 'solidus_backend'
 gem 'solidus_frontend'
 
 # Other gems

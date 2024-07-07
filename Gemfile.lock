@@ -605,7 +605,6 @@ DEPENDENCIES
   solidus (~> 4.3)
   solidus_admin (>= 0.2)
   solidus_auth_devise (~> 2.5)
-  solidus_backend
   solidus_frontend
   solidus_paypal_commerce_platform (~> 1.0)
   solidus_support

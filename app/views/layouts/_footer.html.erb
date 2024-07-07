@@ -7,7 +7,7 @@
       </div>
       <div class="text-center mt-10 align-text-center">
         <a href="#" class="hover:underline mr-6 bebas-neue-regular">Conditions de vente</a>
-        <a href="#" class="hover:underline mr-6 bebas-neue-regular">Mentions légales</a>
+        <a href="#" id="legalMentionsLink" class="hover:underline mr-6 bebas-neue-regular">Mentions légales</a>
         <a href="<%= contact_path %>" class="hover:underline bebas-neue-regular">Contactez-nous</a>
         <br><br>
         <p>© <%= Time.current.year %> <%= Spree::Store.default.name %></p>
@@ -21,3 +21,35 @@
 
   </div>
 </footer>
+
+<!-- Popup for legal mentions -->
+<div id="legalMentionsPopup" class="legal-popup hidden">
+  <div class="legal-popup-content">
+    <span class="legal-popup-close">&times;</span>
+    <h2>Mentions Légales</h2>
+    <p>Vos mentions légales ici...</p>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const legalMentionsLink = document.getElementById('legalMentionsLink');
+    const legalMentionsPopup = document.getElementById('legalMentionsPopup');
+    const closePopup = legalMentionsPopup.querySelector('.legal-popup-close');
+  
+    legalMentionsLink.addEventListener('click', (event) => {
+      event.preventDefault(); // Prevent the default link behavior
+      legalMentionsPopup.classList.remove('hidden'); // Show the popup
+    });
+  
+    closePopup.addEventListener('click', () => {
+      legalMentionsPopup.classList.add('hidden'); // Hide the popup
+    });
+  
+    window.addEventListener('click', (event) => {
+      if (event.target === legalMentionsPopup) {
+        legalMentionsPopup.classList.add('hidden'); // Hide the popup when clicking outside the content
+      }
+    });
+  });
+</script>
