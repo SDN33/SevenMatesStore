@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get '/list-products', to: 'products#index', as: 'list_products'
   get '/pages/_matesclubform', to: 'pages#matesclubform', as: 'matesclubform_page'
   get '/matesclubform', to: 'pages#matesclubform', as: 'matesclubform'
+  get '/pages/_apropos', to: 'pages#apropos', as: 'apropos_page'
   get '/contact', to: 'pages#contact', as: 'contact'
 
 end
